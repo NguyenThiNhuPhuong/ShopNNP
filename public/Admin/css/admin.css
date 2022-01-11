@@ -1,0 +1,17 @@
+.active_page {
+    background-color: rgb(53, 164, 238);
+    color: white;
+}
+
+.orderstatus_item {
+    list-style-type: none;
+    margin-right: 15px;
+}
+
+.orderstatus_item_active {
+    color: rgb(50, 160, 224) !important;
+}
+
+.orderstatus_item a {
+    color: black;
+}

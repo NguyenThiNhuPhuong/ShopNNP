@@ -1,0 +1,17 @@
+.content_thanhben,
+header,
+#in_donhang,
+#quaylai {
+    display: none !important;
+}
+
+.content_hienthi {
+    width: 90% !important;
+    overflow: auto;
+    margin-left: 5% !important;
+    margin-top: 30px !important;
+}
+
+.orderdetail_print {
+    display: none !important;
+}
