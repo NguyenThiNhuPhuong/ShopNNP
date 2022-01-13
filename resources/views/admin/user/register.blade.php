@@ -83,7 +83,7 @@
           <i class="fab fa-facebook mr-2"></i>
           Đăng nhập bằng Facebook
         </a>
-        <a href="#" class="btn btn-block btn-danger">
+        <a href="{{url('google/login')}}" class="btn btn-block btn-danger">
           <i class="fab fa-google-plus mr-2"></i>
           Đăng nhập bằng Google+
         </a>

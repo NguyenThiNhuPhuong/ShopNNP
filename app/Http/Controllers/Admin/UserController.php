@@ -19,6 +19,7 @@ class UserController extends Controller
     {
         return view('admin.user.login');
     }
+
     function store(Request $request)
     {
         $validated = $request->validate([
@@ -37,6 +38,8 @@ class UserController extends Controller
             return redirect()->back();
         }
     }
+
+    
 
     function logout(Request $request)
     {

@@ -35,7 +35,7 @@
                   <tbody>
                      <tr>
                         <td style="background-color:#f0f2f0;padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:10px;font-weight:700">
-                           <div>THÔNG TIN ĐƠN HÀNG #{{$data['order']->ordercode}} ({{$data['order']->created_at->format('H:i:s Ngày d tháng m Năm Y')}})</div>
+                           <div>THÔNG TIN ĐƠN HÀNG #{{$data['order']->ordercode}} ({{$data['order']->created_at->format('H:i:s  d/m/Y')}})</div>
                         </td>
                      </tr>
                      <tr>

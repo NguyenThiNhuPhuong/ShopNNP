@@ -12,12 +12,18 @@ use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\ShopController;
 use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\OrderController;
+use \App\Http\Controllers\GoogleController;
 use App\Http\Controllers\AjaxController;
-
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Google Sign In
+Route::get('/google/login', [GoogleController::class, 'getGoogleSignInUrl']);
+Route::get('/google/callback', [GoogleController::class, 'loginCallback']);
+Route::post('/google/login/store', [GoogleController::class, 'googleLogin']);
+Route::post('/google/register/store', [GoogleController::class, 'googleRegister']);
 
 //Admin
 Route::get('Admin/user/register', [UserController::class, 'register'])->name('register');
@@ -31,9 +37,6 @@ Route::get('/product', [ShopController::class, 'shop'])->name('product');
 Route::get('/product/category/{name}/{id}', [ShopController::class, 'shopCategory']);
 Route::get('/product/productdetail/{id}', [ShopController::class, 'product_detail']);
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
-
-
-
 
 Route::middleware(['auth'])->group(function () {
     //Admin
@@ -70,11 +73,11 @@ Route::middleware(['auth'])->group(function () {
         //feedback
         Route::post('/feedback/store/add', [ContactController::class, 'add'])->name('addFeedBack');
         Route::get('/feedback/listFeedback', [ContactController::class, 'listFeedback'])->name('adminListFeedback');
-         //order
-         Route::get('/order/listOrder', [OrderController::class, 'listOrder'])->name('adminOrder');
-         Route::get('/order/orderstatus/{id}', [OrderController::class, 'listOrderStatus']);
-         Route::get('/order/orderDetail/{id}', [OrderController::class, 'orderDetail']);
-         Route::post('/order/orderDetail/updateOrderstatus', [AjaxController::class, 'update_orderstatus']);
+        //order
+        Route::get('/order/listOrder', [OrderController::class, 'listOrder'])->name('adminOrder');
+        Route::get('/order/orderstatus/{id}', [OrderController::class, 'listOrderStatus']);
+        Route::get('/order/orderDetail/{id}', [OrderController::class, 'orderDetail']);
+        Route::post('/order/orderDetail/updateOrderstatus', [AjaxController::class, 'update_orderstatus']);
     });
     //Customer
     Route::get('/myCart', [CartController::class, 'showCart'])->name('myCart');
