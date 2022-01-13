@@ -78,7 +78,7 @@
                 <nav class="limiter-menu-desktop container">
 
                     <!-- Logo desktop -->
-                    <a href="#" class="logo">
+                    <a href="{{route('home')}}" class="logo">
                         <img src="/ShopNNP/public/Customer/images/customer_images/logoshop.png" alt="IMG-LOGO">
                     </a>
 
@@ -131,7 +131,7 @@
         <div class="wrap-header-mobile">
             <!-- Logo moblie -->
             <div class="logo-mobile">
-                <a href="index.html"><img src="/ShopNNP/public/Customer/images/customer_images/logoshop.png" alt="IMG-LOGO"></a>
+                <a href="{{route('home')}}"><img src="/ShopNNP/public/Customer/images/customer_images/logoshop.png" alt="IMG-LOGO"></a>
             </div>
 
             <!-- Icon header -->
