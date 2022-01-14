@@ -25,6 +25,7 @@ Route::get('/google/login', [GoogleController::class, 'getGoogleSignInUrl']);
 Route::get('/google/callback', [GoogleController::class, 'loginCallback']);
 Route::post('/google/login/store', [GoogleController::class, 'googleLogin']);
 Route::post('/google/register/store', [GoogleController::class, 'googleRegister']);
+
 // Facebook Sign In
 Route::get('/facebook/login', [FacebookController::class, 'getFacebookSignInUrl']);
 Route::get('/facebook/callback', [FacebookController::class, 'loginCallback']);

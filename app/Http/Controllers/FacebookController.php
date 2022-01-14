@@ -19,19 +19,19 @@ class FacebookController extends Controller
     public function loginCallback(Request $request)
     {
        
-        $facebookUser = Socialite::driver('google')->user();
-        $user = User::where('email', $googleUser->email)->first();
+        $facebookUser = Socialite::driver('facebook')->user();
+        $user = User::where('email', $facebookUser->email)->first();
         if (!empty($user)) {
             return view('admin.user.googlelogin', [
-                'email' => $googleUser->email,
-                'name' => $googleUser->name,
-                'google_id' => $googleUser->id,
+                'email' => $facebookUser->email,
+                'name' => $facebookUser->name,
+                'fb_id' => $facebookUser->id,
             ]);
         } else {
             return view('admin.user.googleregister', [
-                'email' => $googleUser->email,
-                'name' => $googleUser->name,
-                'google_id' => $googleUser->id,
+                'email' => $facebookUser->email,
+                'name' => $facebookUser->name,
+                'fb_id' => $facebookUser->id,
             ]);
         }
     }
@@ -64,7 +64,7 @@ class FacebookController extends Controller
                 [
                     'email' => $request->email,
                     'name' => $request->name,
-                    'google_id' => $request->google_id,
+                    'fb_id' => $request->google_id,
                     'password' => bcrypt($request->password),
                     'type_id' => $request->type_id,
                 ]
