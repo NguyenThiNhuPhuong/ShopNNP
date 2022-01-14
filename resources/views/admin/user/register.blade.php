@@ -79,11 +79,11 @@
 
       <div class="social-auth-links text-center">
         <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
+        <a href="#" class="btn btn-block btn-outline-primary">
           <i class="fab fa-facebook mr-2"></i>
           Đăng nhập bằng Facebook
         </a>
-        <a href="{{url('google/login')}}" class="btn btn-block btn-danger">
+        <a href="{{url('google/login')}}" class="btn btn-block btn-outline-danger">
           <i class="fab fa-google-plus mr-2"></i>
           Đăng nhập bằng Google+
         </a>

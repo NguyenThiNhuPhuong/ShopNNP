@@ -78,26 +78,25 @@
         </div>
         <div class="row">
             @foreach($listProduct as $product)
-            <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="col-sm-6 col-md-4 col-lg-3" style="margin-top:20px;">
                 <div class="block2-pic hov-img0">
-                    <img src=" {{$product->image}}" alt="IMG-PRODUCT" style="height: 220px;">
+                    <img src=" {{$product->image}}" alt="IMG-PRODUCT" style="height: 300px;">
 
                     <a href="./product/productdetail/{{$product->id}}" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
                         Quick View
                     </a>
                 </div>
-                <h3 style="margin-top:20px;">{{$product->name}}</h3>
-                <h6 style="margin-top:10px;">{{$product->content}}</h6>
+                <h4 class= "text_name"  style="margin-top:20px;">{{$product->name}}</h4>
                 @if($product->price_sale !=null)
                 <div class="row" style="justify-content: right;">
-                    <h4 style="margin-top:10px;margin-right:40px;"><del>{{number_format($product->price, 0, ',', '.')}} VND</del></h4>
+                    <h6 style="margin-top:10px;margin-right:40px;"><del>{{number_format($product->price, 0, ',', '.')}} <u>đ</u></del></h6>
                 </div>
                 <div class="row " style="justify-content: right;">
-                    <h4 style="margin-top:10px;margin-right:40px;color:red;">{{number_format($product->price_sale, 0, ',', '.')}} VND</h4>
+                    <h5 style="margin-top:10px;margin-right:40px;color:red;">{{number_format($product->price_sale, 0, ',', '.')}} <u>đ</u></h5>
                 </div>
                 @else
                 <div class="row" style="justify-content: right;">
-                    <h4 style="margin-top:10px;margin-right:40px;float:right;color:red;">{{number_format($product->price, 0, ',', '.')}} VND</h4>
+                    <h5 style="margin-top:10px;margin-right:40px;float:right;color:red;">{{number_format($product->price, 0, ',', '.')}} <u>đ</u></h5>
                 </div>
                 @endif
             </div>

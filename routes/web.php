@@ -13,6 +13,7 @@ use App\Http\Controllers\Customer\ShopController;
 use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\OrderController;
 use \App\Http\Controllers\GoogleController;
+use \App\Http\Controllers\FacebookController;
 use App\Http\Controllers\AjaxController;
 
 Route::get('/', function () {
@@ -24,6 +25,11 @@ Route::get('/google/login', [GoogleController::class, 'getGoogleSignInUrl']);
 Route::get('/google/callback', [GoogleController::class, 'loginCallback']);
 Route::post('/google/login/store', [GoogleController::class, 'googleLogin']);
 Route::post('/google/register/store', [GoogleController::class, 'googleRegister']);
+// Facebook Sign In
+Route::get('/facebook/login', [FacebookController::class, 'getFacebookSignInUrl']);
+Route::get('/facebook/callback', [FacebookController::class, 'loginCallback']);
+Route::post('/facebook/login/store', [FacebookController::class, 'facebookLogin']);
+Route::post('/facebook/register/store', [FacebookController::class, 'facebookRegister']);
 
 //Admin
 Route::get('Admin/user/register', [UserController::class, 'register'])->name('register');

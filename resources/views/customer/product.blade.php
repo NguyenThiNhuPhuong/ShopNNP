@@ -246,10 +246,15 @@
 						Quick View
 					</a>
 				</div>
-				<h4 style="margin-top:20px;">{{$product->name}}</h4>
+
+				<h4 class="text_name" style="margin-top:20px;">{{$product->name}}</h4>
+
+				<div class="text_content" style="margin-top:20px;">
+					<p>{{$product->content}}</p>
+				</div>
 				@if($product->price_sale !=null)
 				<div class="row" style="justify-content: right;">
-					<h5 style="margin-top:10px;margin-right:40px;"><del>{{number_format($product->price, 0, ',', '.')}} <u>đ</u></del></h5>
+					<h6 style="margin-top:10px;margin-right:40px;"><del>{{number_format($product->price, 0, ',', '.')}} <u>đ</u></del></h6>
 				</div>
 				<div class="row " style="justify-content: right;">
 					<h5 style="margin-top:10px;margin-right:40px;color:red;">{{number_format($product->price_sale, 0, ',', '.')}} <u>đ</u></h5>
