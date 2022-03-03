@@ -107,7 +107,7 @@
                                  </tr>
                                  @endif
                                  <tr>
-                                    <td colspan="3" width="500" style="text-align:right">Chi phí vận chuyển:</td>
+                                    <td colspan="3" width="500" style="text-align:right">Phí vận chuyển:</td>
                                     <td style="vertical-align:top;padding-bottom:10px;text-align:right;font-weight:700"> {{number_format($data['order']->price_ship, 0, ',', '.')}} <u>đ</u></td>
                                  </tr>
                                  <tr>

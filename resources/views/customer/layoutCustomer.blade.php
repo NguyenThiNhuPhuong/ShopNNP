@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="/ShopNNP/public/Customer/images/icons/favicon.png" />
+    <link rel="icon" type="image/png" href="/ShopNNP/public/Customer/images/customer_images/logoshop.png" />
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="/ShopNNP/public/Customer/vendor/bootstrap/css/bootstrap.min.css">
     <!--===============================================================================================-->
@@ -37,6 +37,7 @@
     <link rel="stylesheet" type="text/css" href="/ShopNNP/public/Customer/css/util.css">
     <link rel="stylesheet" type="text/css" href="/ShopNNP/public/Customer/css/main.css">
     <link rel="stylesheet" type="text/css" href="/ShopNNP/public/Customer/css/customer.css">
+    <link rel="stylesheet" type="text/css" href="/ShopNNP/public/Customer/css/personal.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
 </head>
@@ -56,7 +57,7 @@
 
                     <div class="right-top-bar flex-w h-full">
                         @if(Auth::check())
-                        <a href="" class="flex-c-m trans-04 p-lr-25">
+                        <a href="http://localhost:8080/ShopNNP/public/personal" class="flex-c-m trans-04 p-lr-25">
                             {{$user->userLogin()->name}}
                         </a>
                         <a href="{{route('logout')}}" class="flex-c-m trans-04 p-lr-25">

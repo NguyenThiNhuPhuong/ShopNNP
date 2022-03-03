@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+}
+
+.personal_row {
+    margin-top: 150px;
+    margin-bottom: 80px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.content {
+    margin-top: 250px;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 100px;
+}
+
+.canhan_phai span {
+    margin-left: 30px;
+}
+
+.canhan_thanhchon {
+    margin-left: 5%;
+    width: 20%;
+}
+
+.canhan_thanhchon li {
+    padding-top: 20px;
+}
+
+.canhan_thanhchon li a {
+    color: black;
+}
+
+.thanhchon_head p {
+    color: black;
+    margin-bottom: 0;
+}
+
+.canhan_thanhchon li a:hover {
+    color: rgb(56, 188, 240);
+}
+
+#user_thanhchon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.canhan_phai {
+    padding: 20px;
+    background-color: white;
+    min-height: 500px;
+    width: 60%;
+    margin-left: 10%;
+    margin-right: 5%;
+}
+
+.canhan_phai p {
+    color: black;
+    margin-bottom: 0;
+}
+
+.canhan_phai_info {
+    width: 60%;
+}
+
+.ul_thanhchon a {
+    color: black;
+}
+
+#anh_donhang {
+    width: 100px;
+    height: 120px;
+    background-color: white;
+}
+
+.canhan_phai_avatar {
+    width: 35%;
+    margin-left: 5%;
+    border-left: 1px #efefef solid;
+}
+
+.item_avatar img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 100px;
+}
+
+.item_avatar {
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.ul_thanhchon {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    margin-bottom: 50px;
+}
+
+.ul_thanhchon li {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.canhan_active {
+    color: orange !important;
+}
+
+.thongbaotrong {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.ul_thanhchon li:hover {
+    border-bottom: 2px orange solid;
+}
+
+.td_title {
+    width: 200px;
+    text-align: right;
+    padding-right: 30px;
+}
+
+.tr_matkhau {
+    height: 60px;
+}
+
+.head_quemmatkhau {
+    height: 80px;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px rgb(241, 241, 241);
+}
+
+.content_quemmatkhau {
+    min-height: 650px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.khungquenmatkhau {
+    width: 500px;
+    height: 320px;
+    padding: 30px 80px;
+    background-color: white;
+}
+
+.khungquenmatkhau li {
+    height: 40px;
+    border: 1px gainsboro solid;
+    margin-bottom: 10px;
+    line-height: 40px;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+#muiten {
+    color: red;
+    font-size: 35px;
+    position: relative;
+    bottom: 30px;
+    right: 50px;
+}
+
+#mk_btn {
+    width: 100%;
+    height: 40px;
+    background-color: red;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+#mk_btn:hover {
+    opacity: 0.6;
+}
+
+#khung_2 {
+    display: none;
+}
+
+#khung_3 {
+    display: none;
+}

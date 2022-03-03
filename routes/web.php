@@ -12,6 +12,7 @@ use App\Http\Controllers\Customer\HomeController;
 use App\Http\Controllers\Customer\ShopController;
 use App\Http\Controllers\Customer\CartController;
 use App\Http\Controllers\Customer\OrderController;
+use App\Http\Controllers\Customer\PersonalController;
 use \App\Http\Controllers\GoogleController;
 use \App\Http\Controllers\FacebookController;
 use App\Http\Controllers\AjaxController;
@@ -38,6 +39,7 @@ Route::post('Admin/user/register/store/add', [UserController::class, 'add']);
 Route::get('Admin/user/login', [UserController::class, 'login'])->name('login');
 Route::post('Admin/user/login/store', [UserController::class, 'store']);
 Route::get('Admin/user/logout', [UserController::class, 'logout'])->name('logout');
+
 //Customer
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 Route::get('/product', [ShopController::class, 'shop'])->name('product');
@@ -47,7 +49,7 @@ Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 
 Route::middleware(['auth'])->group(function () {
     //Admin
-    Route::prefix('Admin')->group(function () {
+    Route::prefix('Admin')->middleware(['auth.admin'])->group(function () {
         //home
         Route::get('/home', [HomeAdminController::class, 'home'])->name('admin');
         //Category
@@ -98,4 +100,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/getWard', [AjaxController::class, 'getWard']);
     Route::post('/applyDiscount', [AjaxController::class, 'applyDiscount']);
     Route::post('/order', [OrderController::class, 'addOrder']);
+    Route::get('/personal/resetpassword', [PersonalController::class, 'resetPassword'])->name('resetPassUser');
+    Route::get('/personal/notification', [PersonalController::class, 'notification'])->name('notificationUser');
+    Route::get('/personal/order', [PersonalController::class, 'order'])->name('orderUser');
+    Route::get('/personal', [PersonalController::class, 'personal'])->name('personal');
+    
+
 });
