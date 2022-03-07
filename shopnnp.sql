@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2022 at 08:53 AM
+-- Generation Time: Mar 07, 2022 at 02:14 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -877,7 +877,11 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (18, '2021_12_23_035247_create_orderdetail_table', 15),
 (19, '2021_12_23_145351_create_slider_table', 16),
 (21, '2022_01_02_172350_create_feedlback_table', 18),
-(22, '2022_01_12_083829_update_table_user', 19);
+(22, '2022_01_12_083829_update_table_user', 19),
+(23, '2022_01_14_075446_add_table_user', 20),
+(25, '2022_03_07_122312_add_column_pay_by_table_order', 21),
+(26, '2022_03_07_123649_create_table_pay', 21),
+(27, '2022_03_07_125415_add_column_pay_id_by_table_order', 22);
 
 -- --------------------------------------------------------
 
@@ -896,6 +900,7 @@ CREATE TABLE `order` (
   `discount_code` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price_ship` int(11) NOT NULL DEFAULT 30000,
   `price_all` int(11) NOT NULL,
+  `pay_id` bigint(20) UNSIGNED NOT NULL DEFAULT 1,
   `province_id` bigint(20) NOT NULL,
   `district_id` bigint(20) NOT NULL,
   `ward_id` bigint(20) NOT NULL,
@@ -910,20 +915,20 @@ CREATE TABLE `order` (
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`id`, `ordercode`, `user_id`, `fullname`, `phone`, `email`, `price_product`, `discount_code`, `price_ship`, `price_all`, `province_id`, `district_id`, `ward_id`, `address`, `orderstatus_id`, `note`, `created_at`, `updated_at`) VALUES
-(18, 'ĐH0728462748', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 589000, 'TETNNP', 30000, 469000, 52, 547, 21817, 'xóm 2, Kim Thạch', 1, NULL, '2022-01-05 07:46:28', '2022-01-05 07:46:28'),
-(19, 'ĐH0825589697', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 1389000, 'TETNNP', 30000, 1269000, 6, 61, 1927, 'xóm bắc, An Thái', 2, NULL, '2022-01-05 08:58:25', '2022-01-05 11:01:09'),
-(20, 'ĐH0909304532', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 50000, NULL, 30000, 80000, 2, 26, 757, 'xom 3, Thuận Nhứt', 2, NULL, '2022-01-05 09:30:09', '2022-01-05 10:58:52'),
-(21, 'ĐH0208397745', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 119000, NULL, 30000, 149000, 22, 205, 7126, 'jhuy', 1, NULL, '2022-01-11 02:39:08', '2022-01-11 02:39:08'),
-(22, 'ĐH0239532672', 2, '1951120126', '0712548695', '1951120126@sv.ut.edu.vn', 50000, NULL, 30000, 80000, 26, 251, 9058, 'Tây Vinh, Tây Sơn, Bình Định', 1, NULL, '2022-01-11 02:53:39', '2022-01-11 02:53:39'),
-(23, 'ĐH0236569078', 2, 'Minh Ly', '0707583174', 'minhly@gmail.com', 195000, NULL, 30000, 225000, 27, 263, 9487, 'Tây Vinh, Tây Sơn, Bình Định', 1, NULL, '2022-01-11 02:56:36', '2022-01-11 02:56:36'),
-(24, 'ĐH0542348475', 2, '1951120126', '0712548695', '1951120126@sv.ut.edu.vn', 199000, NULL, 30000, 229000, 25, 233, 8272, 'Tây Vinh, Tây Sơn, Bình Định', 1, NULL, '2022-01-11 05:34:42', '2022-01-11 05:34:42'),
-(25, 'ĐH0529531255', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 417000, NULL, 30000, 447000, 52, 547, 21817, 'xóm 3, Thuận Hạnh', 1, NULL, '2022-01-11 05:53:29', '2022-01-11 05:53:29'),
-(26, 'ĐH0504564256', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 169000, NULL, 30000, 199000, 52, 547, 21817, 'xóm 4, Hòa Mỹ', 1, NULL, '2022-01-11 05:56:04', '2022-01-11 05:56:04'),
-(27, 'ĐH0914178954', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 2010000, 'NAMMOI2022', 30000, 1840000, 8, 75, 2473, 'xóm 5, Nghĩa Bình', 1, NULL, '2022-01-11 09:17:15', '2022-01-11 09:17:15'),
-(28, 'ĐH0724245917', 18, 'Lê Minh Tiến', '0707583174', 'nguyenthinhuphuong242@gmail.com', 50000, NULL, 30000, 80000, 24, 216, 7345, 'xóm Bắc, Dĩ Bình', 1, NULL, '2022-01-13 07:24:24', '2022-01-13 07:24:24'),
-(29, 'ĐH0706309404', 18, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 195000, NULL, 30000, 225000, 27, 261, 9388, 'jhuy', 1, NULL, '2022-01-13 07:30:06', '2022-01-13 07:30:06'),
-(30, 'ĐH0706340651', 18, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 50000, NULL, 30000, 80000, 8, 71, 2233, 'jhuy', 2, NULL, '2022-01-13 07:34:06', '2022-01-13 07:44:10');
+INSERT INTO `order` (`id`, `ordercode`, `user_id`, `fullname`, `phone`, `email`, `price_product`, `discount_code`, `price_ship`, `price_all`, `pay_id`, `province_id`, `district_id`, `ward_id`, `address`, `orderstatus_id`, `note`, `created_at`, `updated_at`) VALUES
+(18, 'ĐH0728462748', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 589000, 'TETNNP', 30000, 469000, 1, 52, 547, 21817, 'xóm 2, Kim Thạch', 1, NULL, '2022-01-05 07:46:28', '2022-01-05 07:46:28'),
+(19, 'ĐH0825589697', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 1389000, 'TETNNP', 30000, 1269000, 1, 6, 61, 1927, 'xóm bắc, An Thái', 2, NULL, '2022-01-05 08:58:25', '2022-01-05 11:01:09'),
+(20, 'ĐH0909304532', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 50000, NULL, 30000, 80000, 1, 2, 26, 757, 'xom 3, Thuận Nhứt', 2, NULL, '2022-01-05 09:30:09', '2022-01-05 10:58:52'),
+(21, 'ĐH0208397745', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 119000, NULL, 30000, 149000, 1, 22, 205, 7126, 'jhuy', 1, NULL, '2022-01-11 02:39:08', '2022-01-11 02:39:08'),
+(22, 'ĐH0239532672', 2, '1951120126', '0712548695', '1951120126@sv.ut.edu.vn', 50000, NULL, 30000, 80000, 1, 26, 251, 9058, 'Tây Vinh, Tây Sơn, Bình Định', 1, NULL, '2022-01-11 02:53:39', '2022-01-11 02:53:39'),
+(23, 'ĐH0236569078', 2, 'Minh Ly', '0707583174', 'minhly@gmail.com', 195000, NULL, 30000, 225000, 1, 27, 263, 9487, 'Tây Vinh, Tây Sơn, Bình Định', 1, NULL, '2022-01-11 02:56:36', '2022-01-11 02:56:36'),
+(24, 'ĐH0542348475', 2, '1951120126', '0712548695', '1951120126@sv.ut.edu.vn', 199000, NULL, 30000, 229000, 1, 25, 233, 8272, 'Tây Vinh, Tây Sơn, Bình Định', 1, NULL, '2022-01-11 05:34:42', '2022-01-11 05:34:42'),
+(25, 'ĐH0529531255', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 417000, NULL, 30000, 447000, 1, 52, 547, 21817, 'xóm 3, Thuận Hạnh', 1, NULL, '2022-01-11 05:53:29', '2022-01-11 05:53:29'),
+(26, 'ĐH0504564256', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 169000, NULL, 30000, 199000, 1, 52, 547, 21817, 'xóm 4, Hòa Mỹ', 1, NULL, '2022-01-11 05:56:04', '2022-01-11 05:56:04'),
+(27, 'ĐH0914178954', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 2010000, 'NAMMOI2022', 30000, 1840000, 1, 8, 75, 2473, 'xóm 5, Nghĩa Bình', 1, NULL, '2022-01-11 09:17:15', '2022-01-11 09:17:15'),
+(28, 'ĐH0724245917', 18, 'Lê Minh Tiến', '0707583174', 'nguyenthinhuphuong242@gmail.com', 50000, NULL, 30000, 80000, 1, 24, 216, 7345, 'xóm Bắc, Dĩ Bình', 1, NULL, '2022-01-13 07:24:24', '2022-01-13 07:24:24'),
+(29, 'ĐH0706309404', 18, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 195000, NULL, 30000, 225000, 1, 27, 261, 9388, 'jhuy', 1, NULL, '2022-01-13 07:30:06', '2022-01-13 07:30:06'),
+(30, 'ĐH0706340651', 18, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 50000, NULL, 30000, 80000, 1, 8, 71, 2233, 'jhuy', 2, NULL, '2022-01-13 07:34:06', '2022-01-13 07:44:10');
 
 -- --------------------------------------------------------
 
@@ -999,6 +1004,26 @@ CREATE TABLE `password_resets` (
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pay`
+--
+
+CREATE TABLE `pay` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `pay`
+--
+
+INSERT INTO `pay` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'Thanh toán khi nhận hàng', '2022-03-07 13:40:34', '2022-03-07 13:40:34');
 
 -- --------------------------------------------------------
 
@@ -1199,16 +1224,18 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `created_by` bigint(20) UNSIGNED DEFAULT NULL,
   `updated_by` bigint(20) UNSIGNED DEFAULT NULL,
-  `google_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+  `google_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fb_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `type_id`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `created_by`, `updated_by`, `google_id`) VALUES
-(2, 'Nguyễn Như Phượng', 'nguyenthinhuphuong242@gmail.com', 1, NULL, '$2y$10$42lF2wp805JJ3T.0ZDl8fOQQE5OJM3luIg5kKR5BfIc44e2mp4Gwm', 'XuPfpeTgc6iNDDpZFd8vlZL8YtIpI5nFkbZtuzdxO0usq7tfIdFtR1tTt7YB', '2021-12-23 10:23:08', '2022-01-05 07:26:09', NULL, NULL, NULL),
-(18, 'web Happy', 'webhappyday@gmail.com', 2, NULL, '$2y$10$gCukBt3Hd2/kQrTYXvxB1en72w6KlkNUH/Ewk48BOqnBcntTYJnoO', NULL, '2022-01-13 00:22:09', '2022-01-13 00:22:09', NULL, NULL, '115327070269828401650');
+INSERT INTO `users` (`id`, `name`, `email`, `type_id`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `created_by`, `updated_by`, `google_id`, `fb_id`) VALUES
+(2, 'Nguyễn Như Phượng', 'nguyenthinhuphuong242@gmail.com', 1, NULL, '$2y$10$42lF2wp805JJ3T.0ZDl8fOQQE5OJM3luIg5kKR5BfIc44e2mp4Gwm', 'zcBJ3nYDZZT6B31eEVoSaSALwxAgk8SAsa1oFJZ1scLNHTKF5AHRIaAgzvWE', '2021-12-23 10:23:08', '2022-01-05 07:26:09', NULL, NULL, NULL, NULL),
+(18, 'web Happy', 'webhappyday@gmail.com', 2, NULL, '$2y$10$gCukBt3Hd2/kQrTYXvxB1en72w6KlkNUH/Ewk48BOqnBcntTYJnoO', NULL, '2022-01-13 00:22:09', '2022-01-13 00:22:09', NULL, NULL, '115327070269828401650', NULL),
+(19, 'Quang Linh', 'quanglinh@gmail.com', 2, NULL, '$2y$10$/BNax/fMwT1oKz1WVpCM5O01WxU8tf30xpy1Afbyw49PmK9Rz7PwS', NULL, '2022-03-07 00:08:22', '2022-03-07 00:08:22', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -11915,7 +11942,8 @@ ALTER TABLE `order`
   ADD KEY `province_id` (`province_id`),
   ADD KEY `district_id` (`district_id`),
   ADD KEY `ward_id` (`ward_id`),
-  ADD KEY `discount_code` (`discount_code`);
+  ADD KEY `discount_code` (`discount_code`),
+  ADD KEY `order_pay_id_foreign` (`pay_id`);
 
 --
 -- Indexes for table `orderdetail`
@@ -11936,6 +11964,12 @@ ALTER TABLE `orderstatus`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
+
+--
+-- Indexes for table `pay`
+--
+ALTER TABLE `pay`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `personal_access_tokens`
@@ -12016,7 +12050,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `order`
@@ -12035,6 +12069,12 @@ ALTER TABLE `orderdetail`
 --
 ALTER TABLE `orderstatus`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `pay`
+--
+ALTER TABLE `pay`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -12058,7 +12098,7 @@ ALTER TABLE `slider`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `user_type`
@@ -12103,7 +12143,8 @@ ALTER TABLE `order`
   ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`province_id`) REFERENCES `province` (`id`),
   ADD CONSTRAINT `order_ibfk_2` FOREIGN KEY (`district_id`) REFERENCES `district` (`id`),
   ADD CONSTRAINT `order_ibfk_3` FOREIGN KEY (`ward_id`) REFERENCES `ward` (`id`),
-  ADD CONSTRAINT `order_ibfk_4` FOREIGN KEY (`discount_code`) REFERENCES `discount` (`code`);
+  ADD CONSTRAINT `order_ibfk_4` FOREIGN KEY (`discount_code`) REFERENCES `discount` (`code`),
+  ADD CONSTRAINT `order_pay_id_foreign` FOREIGN KEY (`pay_id`) REFERENCES `pay` (`id`);
 
 --
 -- Constraints for table `orderdetail`
