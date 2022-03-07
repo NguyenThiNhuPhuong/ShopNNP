@@ -103,6 +103,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/personal/resetpassword', [PersonalController::class, 'resetPassword'])->name('resetPassUser');
     Route::get('/personal/notification', [PersonalController::class, 'notification'])->name('notificationUser');
     Route::get('/personal/order', [PersonalController::class, 'order'])->name('orderUser');
+    Route::get('/personal/order/{id}', [PersonalController::class, 'orderDetail'])->name('orderDetailUser');
     Route::get('/personal', [PersonalController::class, 'personal'])->name('personal');
     
 

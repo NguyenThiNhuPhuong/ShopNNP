@@ -15,4 +15,7 @@ class Orderdetail extends Model
     function product(){
         return $this->hasOne("App\Models\Product", 'id', 'product_id');
     }
+    function discount(){
+        return $this->hasOne("App\Models\Product", 'code', 'discount_code');
+    }
 }

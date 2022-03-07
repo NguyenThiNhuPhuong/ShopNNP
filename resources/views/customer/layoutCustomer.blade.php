@@ -38,6 +38,30 @@
     <link rel="stylesheet" type="text/css" href="/ShopNNP/public/Customer/css/main.css">
     <link rel="stylesheet" type="text/css" href="/ShopNNP/public/Customer/css/customer.css">
     <link rel="stylesheet" type="text/css" href="/ShopNNP/public/Customer/css/personal.css">
+    <!--=================================admin=======================================================-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="/ShopNNP/public/Admin/plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="/ShopNNP/public/Admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/ShopNNP/public/Admin/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="/ShopNNP/public/Admin/dist/css/adminlte.min.css">
+    <script src="/ShopNNP/public/Admin/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="/ShopNNP/public/Admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- jquery-validation -->
+    <script src="/ShopNNP/public/Admin/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="/ShopNNP/public/Admin/plugins/jquery-validation/additional-methods.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="/ShopNNP/public/Admin/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="/ShopNNP/public/Admin/dist/js/demo.js"></script>
+    <!--  script -->
+    <script src="/ShopNNP/public/Admin/js/admin.js"></script>
+    
+     <!--=================================admin=======================================================-->
+
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
 </head>

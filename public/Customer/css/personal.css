@@ -12,11 +12,11 @@
     margin-top: 150px;
     margin-bottom: 80px;
     width: 80%;
-    margin-left: 10%;
+    margin-left: 10% !important;
 }
 
 body {
-    background-color: #f5f5f5;
+    background-color: #f5f5f5 !important;
 }
 
 .content {
@@ -65,7 +65,7 @@ body {
     background-color: white;
     min-height: 500px;
     width: 60%;
-    margin-left: 10%;
+    margin-left: 10% !important;
     margin-right: 5%;
 }
 
