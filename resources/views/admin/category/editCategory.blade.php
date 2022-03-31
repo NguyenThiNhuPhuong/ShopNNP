@@ -57,12 +57,14 @@
                             </div>
 
                         </div>
+                       
                         <!-- /.card-body -->
                         <div class="card-footer">
                             <button type="submit" class="btn btn-primary">Cập nhật</button>
                         </div>
                     </form>
                 </div>
+                <a href="{{route('adminCategory')}}">Quay lại</a>
                 <!-- /.card -->
             </div>
             <div class="col-md-8">

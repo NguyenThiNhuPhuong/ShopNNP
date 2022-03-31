@@ -50,6 +50,14 @@ class Product extends Model
         $arrayImage=$this->getProduct($id)->array_image;
         return  explode("#", $arrayImage);
     }
+    function getSize($id){
+        $size=$this->getProduct($id)->size;
+        return  explode("#", $size);
+    }
+    function getColor($id){
+        $color=$this->getProduct($id)->color;
+        return  explode("#", $color);
+    }
     function updateNum($id,$num_buy,$num){
         Product::where('id',$id)
         ->update([

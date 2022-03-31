@@ -49,7 +49,8 @@
 
                             <div class="form-group col-sm-12">
                                 <label for="content">Nội dung</label>
-                                <textarea name="content" class="form-control" id="content" value="{{old('content')}}" placeholder="Nhập nội dung" cols="30" rows="10"></textarea>
+                                <textarea name="content" class="form-control" id="content" >{{old('content')}}</textarea>
+
                             </div>
                             <div class="form-group col-sm-12">
                                 <label for="image">Hình ảnh</label>
@@ -58,8 +59,19 @@
                             </div>
                             <div class="form-group col-sm-12">
                                 <label for="array_image">Danh sách hình ảnh</label>
-                                <textarea name="array_image" class="form-control" id="array_image" value="{{old('array_image')}}" placeholder="Nhập danh sách ảnh" cols="30" rows="10"></textarea>
+                                <textarea name="array_image" class="form-control" id="array_image"  placeholder="Nhập danh sách ảnh" cols="30" rows="10">{{old('array_image')}}</textarea>
                             </div>
+                            <div class="row col-sm-12">
+                                <div class="form-group col-sm-4">
+                                    <label for="size">Size</label>
+                                    <textarea name="size" class="form-control" id="size"  placeholder="Nhập size" rows="4">{{old('size')}}</textarea>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label for="color">Màu</label>
+                                    <textarea name="color" class="form-control" id="color"  placeholder="Nhập color" rows="4">{{old('color')}}</textarea>
+                                </div>
+                            </div>
+
                             <div class="row col-sm-12">
                                 <div class="form-group col-sm-3">
                                     <label for="price">Giá gốc</label>

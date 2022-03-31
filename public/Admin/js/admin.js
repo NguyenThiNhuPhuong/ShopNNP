@@ -4,10 +4,29 @@ $.ajaxSetup({
     }
 });
 
-$('#immage_form_product').prop("src", $('#image').val());
-$('#image').change(function() {
-    console.log($('#image').val())
+$(document).ready(function() {
+    $('#content').summernote({
+        placeholder: 'Nhập nội dung',
+        tabsize: 2,
+        height: 250
+    })
+});
+
+
+if ($('#image').val() == "") {
+    $('#immage_form_product').hide();
+} else {
+    $('#immage_form_product').show();
     $('#immage_form_product').prop("src", $('#image').val());
+}
+$('#image').change(function() {
+    if ($('#image').val() == "") {
+        $('#immage_form_product').hide();
+    } else {
+        $('#immage_form_product').show();
+        $('#immage_form_product').prop("src", $('#image').val());
+    }
+
 });
 
 function delete_product(id) {

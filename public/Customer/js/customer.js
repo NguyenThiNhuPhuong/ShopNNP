@@ -22,6 +22,8 @@ function addcart(id) {
 
 }
 
+
+
 function deletecart(id) {
     console.log(id)
     $.post("http://localhost:8080/ShopNNP/public/deleteCart", {
@@ -78,12 +80,13 @@ function applyDiscount() {
 
 $('.btn-num-product-down_2').on('click', function() {
     var numProduct = Number($(this).next().val());
-    if (numProduct > 0) $(this).next().val(numProduct - 1);
+    if (numProduct > 0) $(this).next().val(numProduct - 1);      
+   
 });
 
 $('.btn-num-product-up_2').on('click', function() {
     var numProduct = Number($(this).prev().val());
-    $(this).prev().val(numProduct + 1);
+    $(this).prev().val(numProduct + 1); 
 });
 
 $('.btn-num-product-down').on('click', function() {

@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{$title}}</title>
+
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/ShopNNP/public/Admin/plugins/fontawesome-free/css/all.min.css">
     <!-- icheck bootstrap -->
     <link rel="stylesheet" href="/ShopNNP/public/Admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
     <!-- Theme style -->
     <link rel="stylesheet" href="/ShopNNP/public/Admin/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="/ShopNNP/public/Admin/css/admin.css">
@@ -156,7 +159,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{route('admin')}}" class="brand-link">
-                <img src="/ShopNNP/public/Admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <img src="/ShopNNP/public/Customer/images/customer_images/logoshop.png" alt="ShopNNP Logo" class="brand-image img-circle elevation-3" style="opacity: .8; background-color: white;">
                 <span class="brand-text font-weight-light">Admin</span>
             </a>
 
@@ -297,6 +300,7 @@
                                     Đơn hàng
                                 </p>
                             </a>
+
                         </li>
                         <li class="nav-item">
                             <a href="{{route('adminListFeedback')}}" class="nav-link">
@@ -355,8 +359,11 @@
     <script src="/ShopNNP/public/Admin/dist/js/demo.js"></script>
     <!--  script -->
     <script src="/ShopNNP/public/Admin/js/admin.js"></script>
-    <script>
-    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    
 </body>
 
 </html>

@@ -41,6 +41,7 @@ class CartController extends Controller
                 'message' => "Số lượng hoặc sản phẩm không chính xác!",
             ]);
         }
+       
         $cart = Session::get('cart');
         if (is_null($cart)) {
             Session::put('cart', [
@@ -146,6 +147,26 @@ class CartController extends Controller
             'product' => $this->product,
             'listCart' => $cart,
             'price_product' => $this->totalCart(),
+            'discount' => $this->discount,
+            'listProvince'=>$this->province->getAll(),
+        ]);
+    }
+    function buyNow($id,$num){
+        $cart = [$id=> $num];
+        $product = $this->product->getProduct($id);
+        if ($product->price_sale != null) {
+            $totalCart=$product->price_sale * $num;
+        } else {
+            $totalCart=$product->price * $num;
+        }
+
+        return view('customer.checkout', [
+            'title' => 'Check out',
+            'user' => $this->user->userLogin(),
+            'numCart'=>$this->numCart(),
+            'product' => $this->product,
+            'listCart' => $cart,
+            'price_product' => $totalCart,
             'discount' => $this->discount,
             'listProvince'=>$this->province->getAll(),
         ]);

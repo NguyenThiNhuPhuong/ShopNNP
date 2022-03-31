@@ -86,15 +86,75 @@ class OrderController extends Controller
             $this->product->updateNum($key, $num_buy, $n);
         }
         Session::forget('cart');
-        $user=Auth::user();
-        $message=[
-            'order'=>$order,
+        $user = Auth::user();
+        $message = [
+            'order' => $order,
             'discount' => $this->discount,
         ];
         SendEmail::dispatch($message, $user)->delay(now()->addMinute(1));
         return redirect()->route('notification');
     }
+    
+    function orderNow(Request $request)
+    {
 
+        $validated = $request->validate([
+            'fullname' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'province_id' => 'required',
+            'district_id' => 'required',
+            'ward_id' => 'required',
+            'address' => 'required',
+        ]);
+        $ordercode = "ĐH" . date('hsi') . str_pad(mt_rand(1, 9999), 4, '0', STR_PAD_LEFT);
+        $this->order->user_id = $request->user_id;
+        $this->order->ordercode = $ordercode;
+        $this->order->fullname = $request->fullname;
+        $this->order->phone = $request->phone;
+        $this->order->email = $request->email;
+        $this->order->price_product = $request->price_product;
+        $this->order->price_all = $request->price_all;
+        $this->order->province_id = $request->province_id;
+        $this->order->district_id  = $request->district_id;
+        $this->order->ward_id  = $request->ward_id;
+        $this->order->address  = $request->address;
+        foreach ($this->discount->getActive() as $discount) {
+            if ($request->discount_code == $discount->code) {
+                $this->order->discount_code  = $request->discount_code;
+                $num_used = $discount->num_used + 1;
+                $this->discount->updateNumUsed($discount->code, $num_used);
+                break;
+            }
+        }
+        $this->order->note  = $request->note;
+
+        $this->order->save();
+
+        //addOrderDetail
+        $order = $this->order->getOrderCode($ordercode);
+        $order_id = $order->id;
+       
+            $this->orderdetail->create([
+                'order_id' => $order_id,
+                'product_id' => $request->id,
+                'num' =>$request->num,
+                'price' => $this->product->getProduct($request->id)->price_sale == null ? $this->product->getProduct($request->id)->price : $this->product->getProduct($request->id)->price_sale,
+            ]);
+            $n = $this->product->getProduct($request->id)->num - $request->num;
+            $num_buy = $this->product->getProduct($request->id)->num_buy + $request->num;
+            $this->product->updateNum($request->id, $num_buy, $n);
+        
+        
+        $user = Auth::user();
+        $message = [
+            'order' => $order,
+            'discount' => $this->discount,
+        ];
+        SendEmail::dispatch($message, $user)->delay(now()->addMinute(1));
+        return redirect()->route('notification');
+
+    }
     function listOrder()
     {
         return view('admin.order.listOrder', [

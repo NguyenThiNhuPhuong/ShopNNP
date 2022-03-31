@@ -9,7 +9,7 @@
                 <hr>
             </div>
             <div class="row">
-                <form method="POST" action="./order" style="width:90%">
+                <form method="POST" action="http://localhost:8080/ShopNNP/public/order" style="width:90%">
                     @include('admin.alert')
                     @csrf
                     <input type="number" name="user_id" value="{{$user->id}}" class="d-none">
@@ -111,7 +111,7 @@
                             <td colspan="3">
                                 <div class="row">
                                     <div class="form-group col-9">
-                                        <input type="text" class="form-control" id="code_discount" name="discount_code" placeholder="Enter code discount">
+                                        <input type="text" class="form-control" id="code_discount" name="discount_code" placeholder="Nhập mã giảm giá">
                                     </div>
                                     <div class="btn btn-primary form-group col-3 pointer" onclick="applyDiscount();">Sử dụng</div>
                                 </div>

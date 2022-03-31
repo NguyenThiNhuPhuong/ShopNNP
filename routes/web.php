@@ -17,10 +17,6 @@ use \App\Http\Controllers\GoogleController;
 use \App\Http\Controllers\FacebookController;
 use App\Http\Controllers\AjaxController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 // Google Sign In
 Route::get('/google/login', [GoogleController::class, 'getGoogleSignInUrl']);
 Route::get('/google/callback', [GoogleController::class, 'loginCallback']);
@@ -41,10 +37,10 @@ Route::post('Admin/user/login/store', [UserController::class, 'store']);
 Route::get('Admin/user/logout', [UserController::class, 'logout'])->name('logout');
 
 //Customer
-Route::get('/home', [HomeController::class, 'home'])->name('home');
+Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/product', [ShopController::class, 'shop'])->name('product');
 Route::get('/product/category/{name}/{id}', [ShopController::class, 'shopCategory']);
-Route::get('/product/productdetail/{id}', [ShopController::class, 'product_detail']);
+Route::any('/product/productdetail/{id}', [ShopController::class, 'product_detail']);
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
 
 Route::middleware(['auth'])->group(function () {
@@ -95,11 +91,13 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/updateCart', [CartController::class, 'updateCart'])->name('updateCart');
     Route::post('/deleteCart', [CartController::class, 'deleteCart'])->name('deleteCart');
     Route::get('/checkout', [CartController::class, 'checkOut'])->name('checkOut');
+    Route::get('/buyNow/{id}/{num}', [CartController::class, 'buyNow'])->name('buyNow');
     Route::get('/checkout/notification', [CartController::class, 'notification'])->name('notification');
     Route::post('/getDistrict', [AjaxController::class, 'getDistrict']);
     Route::post('/getWard', [AjaxController::class, 'getWard']);
     Route::post('/applyDiscount', [AjaxController::class, 'applyDiscount']);
     Route::post('/order', [OrderController::class, 'addOrder']);
+    Route::post('/orderNow', [OrderController::class, 'orderNow'])->name('orderNow');
     Route::get('/personal/resetpassword', [PersonalController::class, 'resetPassword'])->name('resetPassUser');
     Route::get('/personal/notification', [PersonalController::class, 'notification'])->name('notificationUser');
     Route::get('/personal/order', [PersonalController::class, 'order'])->name('orderUser');

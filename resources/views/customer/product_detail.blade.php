@@ -78,12 +78,10 @@
 
                             <div class="size-204 respon6-next">
                                 <div class="rs1-select2 bor8 bg0">
-                                    <select class="js-select2" name="time">
-                                        <option>Choose an option</option>
-                                        <option>Size S</option>
-                                        <option>Size M</option>
-                                        <option>Size L</option>
-                                        <option>Size XL</option>
+                                    <select class="js-select2" name="size">
+                                        @foreach($product->getSize($product->id) as $size)
+                                        <option>{{$size}}</option>
+                                        @endforeach
                                     </select>
                                     <div class="dropDownSelect2"></div>
                                 </div>
@@ -98,11 +96,9 @@
                             <div class="size-204 respon6-next">
                                 <div class="rs1-select2 bor8 bg0">
                                     <select class="js-select2" name="time">
-                                        <option>Choose an option</option>
-                                        <option>Red</option>
-                                        <option>Blue</option>
-                                        <option>White</option>
-                                        <option>Grey</option>
+                                        @foreach($product->getColor($product->id) as $color)
+                                        <option>{{$color}}</option>
+                                        @endforeach
                                     </select>
                                     <div class="dropDownSelect2"></div>
                                 </div>
@@ -115,6 +111,7 @@
                                     <div class="btn-num-product-down_2 cl8 hov-btn3 trans-04 flex-c-m">
                                         <i class="fs-16 zmdi zmdi-minus"></i>
                                     </div>
+
                                     <input class="mtext-104 cl3 txt-center num-product" type="number" name="num" id="num" value="1">
 
                                     <div class="btn-num-product-up_2 cl8 hov-btn3 trans-04 flex-c-m">
@@ -122,11 +119,20 @@
                                     </div>
                                 </div>
                                 @if(Auth::check())
-                                <button class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" onclick="addcart('{{$product->id}}')">
-                                    Add to cart
-                                </button>
+                                <div class="d-flex">
+                                    <button class="flex-c-m stext-101 cl0 size-101 bg1  hov-btn1 p-lr-15 trans-04 js-addcart-detail" onclick="addcart('{{$product->id}}')">
+                                        Thêm vào giỏ hàng
+                                    </button>
+                                    <a class="flex-c-m stext-101 cl0 size-101 bg1  hov-btn1 p-lr-15 trans-04 js-addcart-detail" onclick="buynow('{{$product->id}}')" href="http://localhost:8080/ShopNNP/public/buyNow/{{$product->id}}/{{$num}}">
+                                        Mua ngay
+</a>
+                                </div>
+
                                 @else
-                                <a href="{{route('login')}}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">Add to cart</a>
+                                <div class="d-flex">
+                                    <a href="{{route('login')}}" class="flex-c-m stext-101 cl0 size-101 bg1  hov-btn1 p-lr-15 trans-04 js-addcart-detail">Thêm vào giỏ hàng</a>
+                                    <a href="{{route('login')}}" class="flex-c-m stext-101 cl0 size-101 bg1  hov-btn1 p-lr-15 trans-04 js-addcart-detail">Mua ngay</a>
+                                </div>
                                 @endif
 
                             </div>
@@ -134,25 +140,7 @@
                     </div>
 
                     <!--  -->
-                    <div class="flex-w flex-m p-l-100 p-t-40 respon7">
 
-                        <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Add to Wishlist">
-                            <i class="zmdi zmdi-favorite"></i>
-                        </a>
-
-
-                        <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-
-                        <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-
-                        <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
-                            <i class="fa fa-google-plus"></i>
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -181,7 +169,7 @@
                     <div class="tab-pane fade show active" id="description" role="tabpanel">
                         <div class="how-pos2 p-lr-15-md">
                             <p class="stext-102 cl6">
-                                Aenean sit amet gravida nisi. Nam fermentum est felis, quis feugiat nunc fringilla sit amet. Ut in blandit ipsum. Quisque luctus dui at ante aliquet, in hendrerit lectus interdum. Morbi elementum sapien rhoncus pretium maximus. Nulla lectus enim, cursus et elementum sed, sodales vitae eros. Ut ex quam, porta consequat interdum in, faucibus eu velit. Quisque rhoncus ex ac libero varius molestie. Aenean tempor sit amet orci nec iaculis. Cras sit amet nulla libero. Curabitur dignissim, nunc nec laoreet consequat, purus nunc porta lacus, vel efficitur tellus augue in ipsum. Cras in arcu sed metus rutrum iaculis. Nulla non tempor erat. Duis in egestas nunc.
+                                {{$product->content}}
                             </p>
                         </div>
                     </div>

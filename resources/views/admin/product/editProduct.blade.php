@@ -43,14 +43,14 @@
                                 <label>Danh mục</label>
                                 <select class="form-control" name="category_id">
                                     @foreach($listCategory as $category)
-                                    <option value="{{$category->id}}"  {{$product->category_id==$category->id? 'selected' : ""}}>{{$category->name}}</option>
+                                    <option value="{{$category->id}}" {{$product->category_id==$category->id? 'selected' : ""}}>{{$category->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
 
                             <div class="form-group col-sm-12">
                                 <label for="content">Nội dung</label>
-                                <textarea name="content" class="form-control" id="content" value="{{$product->content}}" placeholder="Nhập nội dung" cols="30" rows="10"></textarea>
+                                <textarea name="content" class="form-control" id="content"  placeholder="Nhập nội dung" cols="30" rows="10">{{$product->content}}</textarea>
                             </div>
                             <div class="form-group col-sm-12">
                                 <label for="image">Hình ảnh</label>
@@ -59,19 +59,29 @@
                             </div>
                             <div class="form-group col-sm-12">
                                 <label for="array_image">Danh sách hình ảnh</label>
-                                <textarea name="array_image" class="form-control" id="array_image" value="{{old('array_image')}}" placeholder="Nhập danh sách ảnh" cols="30" rows="10"></textarea>
+                                <textarea name="array_image" class="form-control" id="array_image" placeholder="Nhập danh sách ảnh" cols="30" rows="10">{{$product->array_image}}</textarea>
                             </div>
                             <div class="row col-sm-12">
-                            <div class="form-group col-sm-3">
-                                <label for="price">Giá tiền</label>
-                                <input type="number" name="price" class="form-control" id="price" value="{{$product->price}}" min="0">
+                                <div class="form-group col-sm-4">
+                                    <label for="size">Size</label>
+                                    <textarea name="size" class="form-control" id="size"  placeholder="Nhập size" rows="4">{{$product->size}}</textarea>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label for="color">Màu</label>
+                                    <textarea name="color" class="form-control" id="color" placeholder="Nhập color" rows="4">{{$product->color}}</textarea>
+                                </div>
                             </div>
-                            <div class="form-group col-sm-3">
-                                <label for="price_sale">Giá sale (khuyến mãi)</label>
-                                <input type="number" name="price_sale" class="form-control" id="price_sale" value="{{$product->price_sale}}" min="0">
+                            <div class="row col-sm-12">
+                                <div class="form-group col-sm-3">
+                                    <label for="price">Giá tiền</label>
+                                    <input type="number" name="price" class="form-control" id="price" value="{{$product->price}}" min="0">
+                                </div>
+                                <div class="form-group col-sm-3">
+                                    <label for="price_sale">Giá sale (khuyến mãi)</label>
+                                    <input type="number" name="price_sale" class="form-control" id="price_sale" value="{{$product->price_sale}}" min="0">
+                                </div>
                             </div>
-                            </div>
-                            
+
                             <div class="form-group col-sm-3">
                                 <label for="num">Số lượng</label>
                                 <input type="number" name="num" class="form-control" id="num" value="{{$product->num}}" min="1">

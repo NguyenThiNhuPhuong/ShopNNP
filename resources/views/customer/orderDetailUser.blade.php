@@ -39,8 +39,7 @@
         @endif
         <p style="font-weight:bold">Tổng tiền: {{number_format( $order->price_all, 0, ',', '.')}} <u>đ</u></p>
         <p>Ngày đặt hàng: {{$order->updated_at->format('d/m/Y H:i:s')}} </p>
-        <a href="{{route('orderUser')}}?type=1">Quay lại</a>
-        
+        <a href="{{route('orderUser')}}?type=1">Quay lại</a>  
     </div>
 </div>
 @endsection

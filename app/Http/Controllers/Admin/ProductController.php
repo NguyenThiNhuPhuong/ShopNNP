@@ -41,6 +41,8 @@ class ProductController extends Controller
         $this->product->active = $request->active;
         $this->product->image = $request->image;
         $this->product->array_image = $request->array_image;
+        $this->product->size = $request->size;
+        $this->product->color = $request->color;
         $this->product->created_by=$this->user->userLogin()->id;
         $this->product->updated_by=$this->user->userLogin()->id;
         $this->product->save();
@@ -67,6 +69,8 @@ class ProductController extends Controller
             'active' => $request->active,
             'image' => $request->image,
             'array_image' => $request->array_image,
+            'color' => $request->color,
+            'size' => $request->size,
             'updated_by'=>$this->user->userLogin()->id,
         ]);
         return redirect()->route('adminListProduct'); 

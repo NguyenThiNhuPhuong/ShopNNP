@@ -38,11 +38,11 @@ class ShopController extends Controller
         }
         return $numCart;
     }
-    function product_detail($id)
+    function product_detail( Request $request,$id)
     {
-
         return view('Customer.product_detail', [
             'title' => 'Product detail',
+            'num' => $request->num,
             'user' => $this->user,
             'product' => $this->product->getProduct($id),
             'listCategory' => $this->category->getActive(),
