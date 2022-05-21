@@ -39,28 +39,14 @@
     <div class="container">
         <div class="row">
             @foreach($listCategory as $category)
-            <div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-                <div class="block1 wrap-pic-w">
-                    <img src=" {{$category->image}}" alt="IMG-BANNER" style="height:220px">
+            <div class=" col col-sm-6 col-md-2 col-lg-2 border border-primary align-items-center justify-content-center bg-secondary">
+                <h4 >
+                    {{$category->name}}
+                </h4>
 
-                    <a href="product.html" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-                        <div class="block1-txt-child1 flex-col-l">
-                            <span class="block1-name ltext-102 trans-04 p-b-8">
-                                {{$category->name}}
-                            </span>
-
-                            <span class="block1-info stext-102 trans-04">
-                                {{count($category->product)}} sản phẩm
-                            </span>
-                        </div>
-
-                        <div class="block1-txt-child2 p-b-4 trans-05">
-                            <div class="block1-link stext-101 cl0 trans-09">
-                                Shop Now
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                <span >
+                    {{count($category->product)}} sản phẩm
+                </span>
             </div>
             @endforeach
         </div>
@@ -86,7 +72,7 @@
                         Quick View
                     </a>
                 </div>
-                <h4 class= "text_name"  style="margin-top:20px;">{{$product->name}}</h4>
+                <h4 class="text_name" style="margin-top:20px;">{{$product->name}}</h4>
                 @if($product->price_sale !=null)
                 <div class="row" style="justify-content: right;">
                     <h6 style="margin-top:10px;margin-right:40px;"><del>{{number_format($product->price, 0, ',', '.')}} <u>đ</u></del></h6>
