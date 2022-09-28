@@ -87,14 +87,14 @@ class OrderController extends Controller
         }
         Session::forget('cart');
         $user = Auth::user();
-        $message = [
-            'order' => $order,
-            'discount' => $this->discount,
-        ];
-        SendEmail::dispatch($message, $user)->delay(now()->addMinute(1));
+//        $message = [
+//            'order' => $order,
+//            'discount' => $this->discount,
+//        ];
+//        SendEmail::dispatch($message, $user)->delay(now()->addMinute(1));
         return redirect()->route('notification');
     }
-    
+
     function orderNow(Request $request)
     {
 
@@ -134,7 +134,7 @@ class OrderController extends Controller
         //addOrderDetail
         $order = $this->order->getOrderCode($ordercode);
         $order_id = $order->id;
-       
+
             $this->orderdetail->create([
                 'order_id' => $order_id,
                 'product_id' => $request->id,
@@ -144,8 +144,8 @@ class OrderController extends Controller
             $n = $this->product->getProduct($request->id)->num - $request->num;
             $num_buy = $this->product->getProduct($request->id)->num_buy + $request->num;
             $this->product->updateNum($request->id, $num_buy, $n);
-        
-        
+
+
         $user = Auth::user();
         $message = [
             'order' => $order,

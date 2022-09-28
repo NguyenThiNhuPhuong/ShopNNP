@@ -38,7 +38,7 @@
     <link rel="stylesheet" type="text/css" href="/ShopNNP/public/Customer/css/main.css">
     <link rel="stylesheet" type="text/css" href="/ShopNNP/public/Customer/css/customer.css">
     <link rel="stylesheet" type="text/css" href="/ShopNNP/public/Customer/css/personal.css">
-    <!--=================================admin=======================================================-->
+    <!--========================================================================================-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/ShopNNP/public/Admin/plugins/fontawesome-free/css/all.min.css">
@@ -59,8 +59,8 @@
     <script src="/ShopNNP/public/Admin/dist/js/demo.js"></script>
     <!--  script -->
     <script src="/ShopNNP/public/Admin/js/admin.js"></script>
-    
-     <!--=================================admin=======================================================-->
+
+     <!--========================================================================================-->
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!--===============================================================================================-->
@@ -79,23 +79,7 @@
                         ShopNNP đồng hành cùng bạn trên mọi chặng đường!
                     </div>
 
-                    <div class="right-top-bar flex-w h-full">
-                        @if(Auth::check())
-                        <a href="http://localhost:8080/ShopNNP/public/personal" class="flex-c-m trans-04 p-lr-25">
-                            {{$user->userLogin()->name}}
-                        </a>
-                        <a href="{{route('logout')}}" class="flex-c-m trans-04 p-lr-25">
-                            Đăng xuất
-                        </a>
-                        @else
-                        <a href="{{route('login')}}" class="flex-c-m trans-04 p-lr-25">
-                            Đăng nhập
-                        </a>
-                        <a href="{{route('register')}}" class="flex-c-m trans-04 p-lr-25">
-                            Đăng ký
-                        </a>
-                        @endif
-                    </div>
+
                 </div>
             </div>
 
@@ -134,9 +118,26 @@
 
                     <!-- Icon header -->
                     <div class="wrap-icon-header flex-w flex-r-m">
-                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-                            <i class="zmdi zmdi-search"></i>
+                        <div class="flex-w h-full">
+                            @if(Auth::check())
+                                <a href="http://localhost:8080/ShopNNP/public/personal" class="flex-c-m  p-lr-10"  style="color: #333">
+                                    {{$user->userLogin()->name}}
+                                </a>
+                                <a href="{{route('logout')}}" class="flex-c-m trans-04 p-lr-10" style="color: #333">
+                                    Đăng xuất
+                                </a>
+                            @else
+                                <a href="{{route('login')}}" class="flex-c-m trans-04 p-lr-10" style="color: #333">
+                                    Đăng nhập
+                                </a>
+                                <a href="{{route('register')}}" class="flex-c-m trans-04 p-lr-10" style="color: #333">
+                                    Đăng ký
+                                </a>
+                            @endif
                         </div>
+{{--                        <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">--}}
+{{--                            <i class="zmdi zmdi-search"></i>--}}
+{{--                        </div>--}}
 
                         @if(Auth::check())
                         <a href="{{route('myCart')}}" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="{{$numCart}}">
@@ -218,24 +219,22 @@
 
             <ul class="main-menu-m">
                 <li>
-                    <a href="index.html">Trang chủ</a>
-                    <ul class="sub-menu-m">
-                        <li><a href="index.html">Homepage 1</a></li>
-                        <li><a href="home-02.html">Homepage 2</a></li>
-                        <li><a href="home-03.html">Homepage 3</a></li>
-                    </ul>
-                    <span class="arrow-main-menu-m">
-                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-                    </span>
+                    <a href="{{route('home')}}">Trang chủ</a>
+{{--                    <ul class="sub-menu-m">--}}
+{{--                        <li><a href="index.html">Homepage 1</a></li>--}}
+{{--                        <li><a href="home-02.html">Homepage 2</a></li>--}}
+{{--                        <li><a href="home-03.html">Homepage 3</a></li>--}}
+{{--                    </ul>--}}
+{{--                    <span class="arrow-main-menu-m">--}}
+{{--                        <i class="fa fa-angle-right" aria-hidden="true"></i>--}}
+{{--                    </span>--}}
                 </li>
 
                 <li>
                     <a href="{{route('product')}}">Shop</a>
                 </li>
 
-                <li>
-                    <a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
-                </li>
+
 
                 <li>
                     <a href="blog.html">Blog</a>

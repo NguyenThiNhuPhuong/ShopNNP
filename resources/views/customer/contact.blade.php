@@ -21,14 +21,19 @@
                     </h4>
                     @include('admin.alert')
                     <div class="bor8 m-b-20 how-pos4-parent">
-                        <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="email" name="email" placeholder="Nhập email" value="{{old('email')}}">
+                        @if(Auth::check())
+                            <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="email" name="email" placeholder="Nhập email" value="{{$user->email}}">
+                        @else
+                            <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="email" name="email" placeholder="Nhập email" value="{{old('email')}}">
+                        @endif
+
                         <img class="how-pos4 pointer-none" src="/ShopNNP/public/customer/images/icons/icon-email.png" alt="ICON">
                     </div>
                     <div class="bor8 m-b-30">
                         <textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="content" placeholder="Ý kiến của bạn"></textarea>
                     </div>
                     @if(Auth::check())
-                    <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+                    <button  class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
                         Gửi
                     </button>
                     @else
@@ -94,7 +99,7 @@
 
 
 <!-- Map -->
-<div class="map">
+<div class="map" id="mymap">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d34190.49974654052!2d106.68627090691676!3d10.803398777317465!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528a3f0b1f849%3A0x234506e937a8dbef!2zMiBWw7UgT2FuaCwgUGjGsOG7nW5nIDI1LCBCw6xuaCBUaOG6oW5oLCBUaMOgbmggcGjhu5EgSOG7kyBDaMOtIE1pbmg!5e0!3m2!1svi!2s!4v1641142747405!5m2!1svi!2s" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
 

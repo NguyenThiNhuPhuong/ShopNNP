@@ -21,7 +21,7 @@ class UserController extends Controller
     }
 
     function store(Request $request)
-    {
+    {  
         $validated = $request->validate([
             'email' => 'required|email:filter',
             'password' => 'required',
@@ -29,7 +29,7 @@ class UserController extends Controller
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
             if (Auth::user()->type_id == 2) {
-                return redirect()->route('home');
+                return redirect()->route('home'); 
             } else {
                 return redirect()->route('admin');
             }

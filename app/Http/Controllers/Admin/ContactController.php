@@ -10,12 +10,12 @@ use App\Models\Feedback;
 
 class ContactController extends Controller
 {
-    
+
     protected $user;
     protected $feedback;
-    
+
     function __construct()
-    {  
+    {
         $this->user = new User;
         $this->feedback = new Feedback();
     }
@@ -34,7 +34,7 @@ class ContactController extends Controller
     function contact(){
         return view('customer.contact',[
             'title' =>'Kết nối',
-            'user' => $this->user,
+            'user' => $this->user->userLogin(),
             'numCart'=>$this->numCart(),
         ]);
     }
@@ -47,7 +47,7 @@ class ContactController extends Controller
         $this->feedback->email = $request->email;
         $this->feedback->content= $request->content;
         $this->feedback->user_id=  $this->user->userLogin()->id;
-        
+
         $this->feedback->save();
         return redirect()->route('notification_feedback');
     }
@@ -63,7 +63,7 @@ class ContactController extends Controller
         return view('admin.feedback.listFeedback', [
             'title' => 'Admin| Phản hồi',
             'user' => $this->user->userLogin(),
-            'listFeedback'=>$this->feedback->getAll(),   
+            'listFeedback'=>$this->feedback->getAll(),
         ]);
     }
 }

@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 07, 2022 at 02:14 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.10
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th9 28, 2022 lúc 11:58 AM
+-- Phiên bản máy phục vụ: 10.4.21-MariaDB
+-- Phiên bản PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `shopnnp`
+-- Cơ sở dữ liệu: `shopnnp`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Cấu trúc bảng cho bảng `categories`
 --
 
 CREATE TABLE `categories` (
@@ -39,19 +39,21 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `categories`
+-- Đang đổ dữ liệu cho bảng `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `image`, `created_at`, `updated_at`, `created_by`, `updated_by`, `active`) VALUES
 (15, 'Trang phục', 'http://www.elle.vn/wp-content/uploads/2018/01/19/B%E1%BB%99-s%C6%B0u-t%E1%BA%ADp-Thu-%C4%90%C3%B4ng-2018-c%E1%BB%A7a-Stella-McCartney-1-4.jpg', '2021-12-24 09:19:51', '2021-12-24 15:05:38', 2, 2, 1),
 (16, 'Giày dép', 'https://cdn.elly.vn/uploads/2021/06/16001210/tong-quan-thuong-hieu-giay-cao-got-christian-louboutin.10.jpg', '2021-12-24 09:20:00', '2021-12-24 15:13:19', 2, 2, 1),
 (17, 'Mũ nón', 'https://cf.shopee.vn/file/31d55ec8c69d55f7f3e86f1d7550535f', '2021-12-24 09:20:07', '2021-12-24 15:13:53', 2, 2, 1),
-(18, 'Mắt kính', NULL, '2022-01-01 09:01:55', '2022-01-01 09:01:55', 2, 2, 1);
+(18, 'Mắt kính', NULL, '2022-01-01 09:01:55', '2022-01-01 09:01:55', 2, 2, 1),
+(19, 'Túi sách', 'https://cf.shopee.vn/file/6168a15c5cc01eac6f169a32cc6aff63', '2022-03-17 16:49:11', '2022-09-28 07:49:38', 2, 2, 0),
+(20, 'dép huhu', NULL, '2022-09-28 07:48:28', '2022-09-28 07:49:05', 2, 2, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `discount`
+-- Cấu trúc bảng cho bảng `discount`
 --
 
 CREATE TABLE `discount` (
@@ -70,7 +72,7 @@ CREATE TABLE `discount` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `discount`
+-- Đang đổ dữ liệu cho bảng `discount`
 --
 
 INSERT INTO `discount` (`code`, `discount`, `price_limit`, `purchase_limit`, `num_used`, `expiration_date`, `content`, `created_at`, `updated_at`, `created_by`, `updated_by`, `active`) VALUES
@@ -80,7 +82,7 @@ INSERT INTO `discount` (`code`, `discount`, `price_limit`, `purchase_limit`, `nu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `district`
+-- Cấu trúc bảng cho bảng `district`
 --
 
 CREATE TABLE `district` (
@@ -91,7 +93,7 @@ CREATE TABLE `district` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `district`
+-- Đang đổ dữ liệu cho bảng `district`
 --
 
 INSERT INTO `district` (`id`, `name`, `type`, `province_id`) VALUES
@@ -804,7 +806,7 @@ INSERT INTO `district` (`id`, `name`, `type`, `province_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `failed_jobs`
+-- Cấu trúc bảng cho bảng `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -820,7 +822,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedback`
+-- Cấu trúc bảng cho bảng `feedback`
 --
 
 CREATE TABLE `feedback` (
@@ -834,16 +836,17 @@ CREATE TABLE `feedback` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `feedback`
+-- Đang đổ dữ liệu cho bảng `feedback`
 --
 
 INSERT INTO `feedback` (`id`, `user_id`, `email`, `content`, `status`, `created_at`, `updated_at`) VALUES
-(1, 2, 'nguyenthinhuphuong242@gmail.com', 'Shop giao hàng đến Quảng Ngãi khoảng mấy ngày vậy ạ, tại e đang cần gấp, không biết shop có hỗ trợ ship nhanh trong ngày không ạ. Em cảm ơn shop.', 0, '2022-01-03 06:59:35', '2022-01-03 06:59:35');
+(1, 2, 'nguyenthinhuphuong242@gmail.com', 'Shop giao hàng đến Quảng Ngãi khoảng mấy ngày vậy ạ, tại e đang cần gấp, không biết shop có hỗ trợ ship nhanh trong ngày không ạ. Em cảm ơn shop.', 0, '2022-01-03 06:59:35', '2022-01-03 06:59:35'),
+(2, 2, 'nguyenthinhuphuong242@gmail.com', 'chào shop ạ', 0, '2022-09-28 09:26:56', '2022-09-28 09:26:56');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Cấu trúc bảng cho bảng `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -853,7 +856,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Đang đổ dữ liệu cho bảng `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -881,12 +884,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (23, '2022_01_14_075446_add_table_user', 20),
 (25, '2022_03_07_122312_add_column_pay_by_table_order', 21),
 (26, '2022_03_07_123649_create_table_pay', 21),
-(27, '2022_03_07_125415_add_column_pay_id_by_table_order', 22);
+(27, '2022_03_07_125415_add_column_pay_id_by_table_order', 22),
+(28, '2022_03_19_042621_add_column_size_by_product', 23);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Cấu trúc bảng cho bảng `order`
 --
 
 CREATE TABLE `order` (
@@ -912,7 +916,7 @@ CREATE TABLE `order` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `order`
+-- Đang đổ dữ liệu cho bảng `order`
 --
 
 INSERT INTO `order` (`id`, `ordercode`, `user_id`, `fullname`, `phone`, `email`, `price_product`, `discount_code`, `price_ship`, `price_all`, `pay_id`, `province_id`, `district_id`, `ward_id`, `address`, `orderstatus_id`, `note`, `created_at`, `updated_at`) VALUES
@@ -927,13 +931,20 @@ INSERT INTO `order` (`id`, `ordercode`, `user_id`, `fullname`, `phone`, `email`,
 (26, 'ĐH0504564256', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 169000, NULL, 30000, 199000, 1, 52, 547, 21817, 'xóm 4, Hòa Mỹ', 1, NULL, '2022-01-11 05:56:04', '2022-01-11 05:56:04'),
 (27, 'ĐH0914178954', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 2010000, 'NAMMOI2022', 30000, 1840000, 1, 8, 75, 2473, 'xóm 5, Nghĩa Bình', 1, NULL, '2022-01-11 09:17:15', '2022-01-11 09:17:15'),
 (28, 'ĐH0724245917', 18, 'Lê Minh Tiến', '0707583174', 'nguyenthinhuphuong242@gmail.com', 50000, NULL, 30000, 80000, 1, 24, 216, 7345, 'xóm Bắc, Dĩ Bình', 1, NULL, '2022-01-13 07:24:24', '2022-01-13 07:24:24'),
-(29, 'ĐH0706309404', 18, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 195000, NULL, 30000, 225000, 1, 27, 261, 9388, 'jhuy', 1, NULL, '2022-01-13 07:30:06', '2022-01-13 07:30:06'),
-(30, 'ĐH0706340651', 18, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 50000, NULL, 30000, 80000, 1, 8, 71, 2233, 'jhuy', 2, NULL, '2022-01-13 07:34:06', '2022-01-13 07:44:10');
+(29, 'ĐH0706309404', 18, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 195000, NULL, 30000, 225000, 1, 27, 261, 9388, 'jhuy', 2, NULL, '2022-01-13 07:30:06', '2022-03-18 08:47:13'),
+(30, 'ĐH0706340651', 18, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 50000, NULL, 30000, 80000, 1, 8, 71, 2233, 'jhuy', 2, NULL, '2022-01-13 07:34:06', '2022-01-13 07:44:10'),
+(31, 'ĐH0129463375', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 357000, NULL, 30000, 387000, 1, 52, 547, 21817, 'xóm 2, Thuận Hạnh', 1, 'giao nhanh giúp e với ạ', '2022-03-24 01:46:29', '2022-03-24 01:46:29'),
+(32, 'ĐH0149491753', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 238000, NULL, 30000, 268000, 1, 24, 215, 7249, 'xóm 2, thuận hạnh', 1, NULL, '2022-03-24 01:49:49', '2022-03-24 01:49:49'),
+(33, 'ĐH0232075500', 2, 'Nguyễn Thị Như Phượng', '0707583174', 'nguyenthinhuphuong242@gmail.com', 199000, NULL, 30000, 229000, 1, 19, 167, 5551, 'xóm 2, Thuận Hiệp', 1, NULL, '2022-03-24 02:07:32', '2022-03-24 02:07:32'),
+(34, 'ĐH0250129285', 2, 'Nguyen Van Han', '0712548695', '1951120126@sv.ut.edu.vn', 195000, NULL, 30000, 225000, 1, 15, 136, 4387, 'Tây Vinh, Tây Sơn, Bình Định', 1, NULL, '2022-03-24 02:12:50', '2022-03-24 02:12:50'),
+(35, 'ĐH0858052270', 2, 'Nguyễn Thị Ngọc Hân', '0707583174', 'nguyenthinhuphuong242@gmail.com', 195000, NULL, 30000, 225000, 1, 26, 247, 8884, 'xóm 2, Thuận Hạnh', 1, 'shop check tin nhắn e với ạ', '2022-09-28 08:05:58', '2022-09-28 08:05:58'),
+(36, 'ĐH0852097619', 2, 'Nguyễn Thị Ngọc Hân', '0707583174', 'nguyenthinhuphuong242@gmail.com', 195000, NULL, 30000, 225000, 1, 31, 312, 11602, 'xóm 2, Thuận Hạnh', 1, NULL, '2022-09-28 08:09:52', '2022-09-28 08:09:52'),
+(37, 'ĐH0803138530', 2, 'Nguyễn Thị Ngọc Hân Hân', '0899930273', 'nguyenthinhuphuong242@gmail.com', 975000, NULL, 30000, 1005000, 1, 15, 133, 4297, 'xóm 2, Thuận Hạnh', 1, NULL, '2022-09-28 08:13:03', '2022-09-28 08:13:03');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orderdetail`
+-- Cấu trúc bảng cho bảng `orderdetail`
 --
 
 CREATE TABLE `orderdetail` (
@@ -945,7 +956,7 @@ CREATE TABLE `orderdetail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `orderdetail`
+-- Đang đổ dữ liệu cho bảng `orderdetail`
 --
 
 INSERT INTO `orderdetail` (`id`, `order_id`, `product_id`, `num`, `price`) VALUES
@@ -968,12 +979,19 @@ INSERT INTO `orderdetail` (`id`, `order_id`, `product_id`, `num`, `price`) VALUE
 (35, 27, 42, 3, 199000),
 (36, 28, 28, 1, 50000),
 (37, 29, 17, 1, 195000),
-(38, 30, 18, 1, 50000);
+(38, 30, 18, 1, 50000),
+(39, 31, 19, 3, 119000),
+(40, 32, 19, 2, 119000),
+(41, 33, 42, 1, 199000),
+(42, 34, 27, 1, 195000),
+(43, 35, 17, 1, 195000),
+(44, 36, 17, 1, 195000),
+(45, 37, 17, 5, 195000);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orderstatus`
+-- Cấu trúc bảng cho bảng `orderstatus`
 --
 
 CREATE TABLE `orderstatus` (
@@ -984,7 +1002,7 @@ CREATE TABLE `orderstatus` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `orderstatus`
+-- Đang đổ dữ liệu cho bảng `orderstatus`
 --
 
 INSERT INTO `orderstatus` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -996,7 +1014,7 @@ INSERT INTO `orderstatus` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `password_resets`
+-- Cấu trúc bảng cho bảng `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -1008,7 +1026,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pay`
+-- Cấu trúc bảng cho bảng `pay`
 --
 
 CREATE TABLE `pay` (
@@ -1019,7 +1037,7 @@ CREATE TABLE `pay` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `pay`
+-- Đang đổ dữ liệu cho bảng `pay`
 --
 
 INSERT INTO `pay` (`id`, `name`, `created_at`, `updated_at`) VALUES
@@ -1028,7 +1046,7 @@ INSERT INTO `pay` (`id`, `name`, `created_at`, `updated_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `personal_access_tokens`
+-- Cấu trúc bảng cho bảng `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -1046,7 +1064,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Cấu trúc bảng cho bảng `products`
 --
 
 CREATE TABLE `products` (
@@ -1060,6 +1078,8 @@ CREATE TABLE `products` (
   `num_buy` int(11) NOT NULL DEFAULT 0,
   `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `array_image` longtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `size` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '''free size''',
+  `color` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '''Ngẫu nhiên''',
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime NOT NULL DEFAULT current_timestamp(),
   `created_by` bigint(20) UNSIGNED NOT NULL,
@@ -1068,41 +1088,44 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `products`
+-- Đang đổ dữ liệu cho bảng `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `category_id`, `content`, `price`, `price_sale`, `num`, `num_buy`, `image`, `array_image`, `created_at`, `updated_at`, `created_by`, `updated_by`, `active`) VALUES
-(17, 'Dép Balenciaga Pool Slide màu trắng', 16, 'Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.', 195000, NULL, -5, 15, 'https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-trang.jpg', 'https://shopgiayreplica.com/wp-content/uploads/2020/06/Dep-Balenciaga-Pool-Slide-Blue-Replica6.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-xanh-la.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-piscine-slide-den.jpg', '2021-12-24 09:28:53', '2022-01-13 07:30:06', 2, 2, 1),
-(18, 'Mũ Lưỡi Trai LINJW', 17, 'Mũ Lưỡi Trai LINJW Vải Cotton Thêu Chữ Thời Trang Unisex Mùa Xuân 2021', 75000, 50000, 0, 15, 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140', 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl7_cUxUIre4_Q37ap0Q0nl76NZC79Wh3nfyasMBlRpBw7v74zxynSojLSGiNpVr_K0kU&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXvTcwSnXIY-FKmoUZG1mAykALEW0NyGjcjefS6YqPjYGBBbCTRdD7McsYWjIb8MXuFg&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSfp0x5yhgd764NyOeVYXUIN8h0U4eo4STWwUvO5UcN1h4qxpmm0kD0GCXYODdSKf6v08&usqp=CAU', '2021-12-25 08:59:00', '2022-01-13 07:34:06', 2, 2, 1),
-(19, 'Mũ cói vành hẹp thêu chữ M', 17, 'Mũ đi biển vừa thời trang, vừa giúp che chắn và bảo vệ da mặt, chất cói tự móc rất mềm đẹp. \r\nMũ có thể gấp gọn để vào vali mang đi tất cả nơi đâu. \r\nDễ dàng mix cùng với nhiều trang phục mà không sợ bị lỗi mốt', 149000, 119000, 6, 9, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU#https://bizweb.dktcdn.net/100/321/593/products/67108799-2116740528435347-746537750668247040-n.jpg?v=1565340541977#https://vn-test-11.slatic.net/p/232853c6f95f59b56407e0b7b2a6703a.jpg#https://winmart.onl/assets/media/images/009/M%C5%A9%20c%C3%B3i%20v%C3%A0nh%20h%E1%BA%B9p%20th%C3%AAu%20ch%E1%BB%AF%20M.jpg', '2021-12-26 14:51:47', '2022-01-11 05:56:04', 2, 2, 1),
-(20, 'Mũ Tai Bèo MG STUDIO Chất Nhung', 17, 'Mũ Tai Bèo MG STUDIO Chất Nhung trẻ trung, năng động', 99000, NULL, 29, 1, 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30', 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30#https://cf.shopee.vn/file/df5372db001a82c84f83d2ff9b196d54#https://bizweb.dktcdn.net/thumb/large/100/329/281/products/10354059929-1510934832-copy.jpg#https://storage.googleapis.com/cdn.nhanh.vn/store/7239/ps/20210407/159_800x800.jpg', '2022-01-01 09:09:27', '2022-01-11 05:53:29', 2, 2, 1),
-(21, 'Giày sneaker nữ trắng', 16, 'Giày sneaker nữ trắng phù hợp mọi lứa tuổi, trẻ trung năng động', 249000, 219000, 18, 2, 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg', 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Peen4W0D5fWpHfWjnu63Xr1J_0awno3AqQFVy_Yt7Y_pad_l0kXetTsVu6cH0BMWDCI&usqp=CAU#https://cf.shopee.vn/file/a34b6e6ef9163cd458999bea119e6d32#https://vn-test-11.slatic.net/p/6cb41ea252fb65e97470ef91e87e6317.jpg', '2022-01-01 09:31:45', '2022-01-11 09:17:15', 2, 2, 1),
-(22, 'Dép Balenciaga Pool Slide màu trắng', 16, 'Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.', 195000, NULL, 3, 7, 'https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-trang.jpg', 'https://shopgiayreplica.com/wp-content/uploads/2020/06/Dep-Balenciaga-Pool-Slide-Blue-Replica6.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-xanh-la.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-piscine-slide-den.jpg', '2021-12-24 09:28:53', '2022-01-11 02:56:36', 2, 2, 1),
-(23, 'Mũ Lưỡi Trai LINJW', 17, 'Mũ Lưỡi Trai LINJW Vải Cotton Thêu Chữ Thời Trang Unisex Mùa Xuân 2021', 75000, 50000, 6, 9, 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140', 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl7_cUxUIre4_Q37ap0Q0nl76NZC79Wh3nfyasMBlRpBw7v74zxynSojLSGiNpVr_K0kU&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXvTcwSnXIY-FKmoUZG1mAykALEW0NyGjcjefS6YqPjYGBBbCTRdD7McsYWjIb8MXuFg&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSfp0x5yhgd764NyOeVYXUIN8h0U4eo4STWwUvO5UcN1h4qxpmm0kD0GCXYODdSKf6v08&usqp=CAU', '2021-12-25 08:59:00', '2021-12-30 03:30:29', 2, 2, 1),
-(24, 'Mũ cói vành hẹp thêu chữ M', 17, 'Mũ đi biển vừa thời trang, vừa giúp che chắn và bảo vệ da mặt, chất cói tự móc rất mềm đẹp. \r\nMũ có thể gấp gọn để vào vali mang đi tất cả nơi đâu. \r\nDễ dàng mix cùng với nhiều trang phục mà không sợ bị lỗi mốt', 149000, 119000, 7, 8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU#https://bizweb.dktcdn.net/100/321/593/products/67108799-2116740528435347-746537750668247040-n.jpg?v=1565340541977#https://vn-test-11.slatic.net/p/232853c6f95f59b56407e0b7b2a6703a.jpg#https://winmart.onl/assets/media/images/009/M%C5%A9%20c%C3%B3i%20v%C3%A0nh%20h%E1%BA%B9p%20th%C3%AAu%20ch%E1%BB%AF%20M.jpg', '2021-12-26 14:51:47', '2022-01-05 04:42:44', 2, 2, 1),
-(25, 'Mũ Tai Bèo MG STUDIO Chất Nhung', 17, 'Mũ Tai Bèo MG STUDIO Chất Nhung trẻ trung, năng động', 99000, NULL, 30, 0, 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30', 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30#https://cf.shopee.vn/file/df5372db001a82c84f83d2ff9b196d54#https://bizweb.dktcdn.net/thumb/large/100/329/281/products/10354059929-1510934832-copy.jpg#https://storage.googleapis.com/cdn.nhanh.vn/store/7239/ps/20210407/159_800x800.jpg', '2022-01-01 09:09:27', '2022-01-01 09:09:27', 2, 2, 1),
-(26, 'Giày sneaker nữ trắng', 16, 'Giày sneaker nữ trắng phù hợp mọi lứa tuổi, trẻ trung năng động', 249000, 219000, 20, 0, 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg', 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Peen4W0D5fWpHfWjnu63Xr1J_0awno3AqQFVy_Yt7Y_pad_l0kXetTsVu6cH0BMWDCI&usqp=CAU#https://cf.shopee.vn/file/a34b6e6ef9163cd458999bea119e6d32#https://vn-test-11.slatic.net/p/6cb41ea252fb65e97470ef91e87e6317.jpg', '2022-01-01 09:31:45', '2022-01-01 09:31:45', 2, 2, 1),
-(27, 'Dép Balenciaga Pool Slide màu trắng', 16, 'Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.', 195000, NULL, 5, 5, 'https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-trang.jpg', 'https://shopgiayreplica.com/wp-content/uploads/2020/06/Dep-Balenciaga-Pool-Slide-Blue-Replica6.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-xanh-la.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-piscine-slide-den.jpg', '2021-12-24 09:28:53', '2021-12-30 03:22:26', 2, 2, 1),
-(28, 'Mũ Lưỡi Trai LINJW', 17, 'Mũ Lưỡi Trai LINJW Vải Cotton Thêu Chữ Thời Trang Unisex Mùa Xuân 2021', 75000, 50000, 0, 15, 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140', 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl7_cUxUIre4_Q37ap0Q0nl76NZC79Wh3nfyasMBlRpBw7v74zxynSojLSGiNpVr_K0kU&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXvTcwSnXIY-FKmoUZG1mAykALEW0NyGjcjefS6YqPjYGBBbCTRdD7McsYWjIb8MXuFg&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSfp0x5yhgd764NyOeVYXUIN8h0U4eo4STWwUvO5UcN1h4qxpmm0kD0GCXYODdSKf6v08&usqp=CAU', '2021-12-25 08:59:00', '2022-01-13 07:24:24', 2, 2, 1),
-(29, 'Mũ cói vành hẹp thêu chữ M', 17, 'Mũ đi biển vừa thời trang, vừa giúp che chắn và bảo vệ da mặt, chất cói tự móc rất mềm đẹp. \r\nMũ có thể gấp gọn để vào vali mang đi tất cả nơi đâu. \r\nDễ dàng mix cùng với nhiều trang phục mà không sợ bị lỗi mốt', 149000, 119000, 8, 7, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU#https://bizweb.dktcdn.net/100/321/593/products/67108799-2116740528435347-746537750668247040-n.jpg?v=1565340541977#https://vn-test-11.slatic.net/p/232853c6f95f59b56407e0b7b2a6703a.jpg#https://winmart.onl/assets/media/images/009/M%C5%A9%20c%C3%B3i%20v%C3%A0nh%20h%E1%BA%B9p%20th%C3%AAu%20ch%E1%BB%AF%20M.jpg', '2021-12-26 14:51:47', '2021-12-30 03:30:29', 2, 2, 1),
-(30, 'Mũ Tai Bèo MG STUDIO Chất Nhung', 17, 'Mũ Tai Bèo MG STUDIO Chất Nhung trẻ trung, năng động', 99000, NULL, 30, 0, 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30', 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30#https://cf.shopee.vn/file/df5372db001a82c84f83d2ff9b196d54#https://bizweb.dktcdn.net/thumb/large/100/329/281/products/10354059929-1510934832-copy.jpg#https://storage.googleapis.com/cdn.nhanh.vn/store/7239/ps/20210407/159_800x800.jpg', '2022-01-01 09:09:27', '2022-01-01 09:09:27', 2, 2, 1),
-(31, 'Giày sneaker nữ trắng', 16, 'Giày sneaker nữ trắng phù hợp mọi lứa tuổi, trẻ trung năng động', 249000, 219000, 20, 0, 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg', 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Peen4W0D5fWpHfWjnu63Xr1J_0awno3AqQFVy_Yt7Y_pad_l0kXetTsVu6cH0BMWDCI&usqp=CAU#https://cf.shopee.vn/file/a34b6e6ef9163cd458999bea119e6d32#https://vn-test-11.slatic.net/p/6cb41ea252fb65e97470ef91e87e6317.jpg', '2022-01-01 09:31:45', '2022-01-01 09:31:45', 2, 2, 1),
-(32, 'Dép Balenciaga Pool Slide màu trắng', 16, 'Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.', 195000, NULL, 5, 5, 'https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-trang.jpg', 'https://shopgiayreplica.com/wp-content/uploads/2020/06/Dep-Balenciaga-Pool-Slide-Blue-Replica6.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-xanh-la.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-piscine-slide-den.jpg', '2021-12-24 09:28:53', '2021-12-30 03:22:26', 2, 2, 1),
-(33, 'Mũ Lưỡi Trai LINJW', 17, 'Mũ Lưỡi Trai LINJW Vải Cotton Thêu Chữ Thời Trang Unisex Mùa Xuân 2021', 75000, 50000, 6, 9, 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140', 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl7_cUxUIre4_Q37ap0Q0nl76NZC79Wh3nfyasMBlRpBw7v74zxynSojLSGiNpVr_K0kU&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXvTcwSnXIY-FKmoUZG1mAykALEW0NyGjcjefS6YqPjYGBBbCTRdD7McsYWjIb8MXuFg&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSfp0x5yhgd764NyOeVYXUIN8h0U4eo4STWwUvO5UcN1h4qxpmm0kD0GCXYODdSKf6v08&usqp=CAU', '2021-12-25 08:59:00', '2021-12-30 03:30:29', 2, 2, 1),
-(34, 'Mũ cói vành hẹp thêu chữ M', 17, 'Mũ đi biển vừa thời trang, vừa giúp che chắn và bảo vệ da mặt, chất cói tự móc rất mềm đẹp. \r\nMũ có thể gấp gọn để vào vali mang đi tất cả nơi đâu. \r\nDễ dàng mix cùng với nhiều trang phục mà không sợ bị lỗi mốt', 149000, 119000, 7, 8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU#https://bizweb.dktcdn.net/100/321/593/products/67108799-2116740528435347-746537750668247040-n.jpg?v=1565340541977#https://vn-test-11.slatic.net/p/232853c6f95f59b56407e0b7b2a6703a.jpg#https://winmart.onl/assets/media/images/009/M%C5%A9%20c%C3%B3i%20v%C3%A0nh%20h%E1%BA%B9p%20th%C3%AAu%20ch%E1%BB%AF%20M.jpg', '2021-12-26 14:51:47', '2022-01-11 02:39:08', 2, 2, 1),
-(35, 'Mũ Tai Bèo MG STUDIO Chất Nhung', 17, 'Mũ Tai Bèo MG STUDIO Chất Nhung trẻ trung, năng động', 99000, NULL, 30, 0, 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30', 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30#https://cf.shopee.vn/file/df5372db001a82c84f83d2ff9b196d54#https://bizweb.dktcdn.net/thumb/large/100/329/281/products/10354059929-1510934832-copy.jpg#https://storage.googleapis.com/cdn.nhanh.vn/store/7239/ps/20210407/159_800x800.jpg', '2022-01-01 09:09:27', '2022-01-01 09:09:27', 2, 2, 1),
-(36, 'Giày sneaker nữ trắng', 16, 'Giày sneaker nữ trắng phù hợp mọi lứa tuổi, trẻ trung năng động', 249000, 219000, 20, 0, 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg', 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Peen4W0D5fWpHfWjnu63Xr1J_0awno3AqQFVy_Yt7Y_pad_l0kXetTsVu6cH0BMWDCI&usqp=CAU#https://cf.shopee.vn/file/a34b6e6ef9163cd458999bea119e6d32#https://vn-test-11.slatic.net/p/6cb41ea252fb65e97470ef91e87e6317.jpg', '2022-01-01 09:31:45', '2022-01-01 09:31:45', 2, 2, 1),
-(37, 'Dép Balenciaga Pool Slide màu trắng', 16, 'Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.', 195000, NULL, 5, 5, 'https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-trang.jpg', 'https://shopgiayreplica.com/wp-content/uploads/2020/06/Dep-Balenciaga-Pool-Slide-Blue-Replica6.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-xanh-la.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-piscine-slide-den.jpg', '2021-12-24 09:28:53', '2021-12-30 03:22:26', 2, 2, 1),
-(38, 'Mũ Lưỡi Trai LINJW', 17, 'Mũ Lưỡi Trai LINJW Vải Cotton Thêu Chữ Thời Trang Unisex Mùa Xuân 2021', 75000, 50000, 6, 9, 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140', 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl7_cUxUIre4_Q37ap0Q0nl76NZC79Wh3nfyasMBlRpBw7v74zxynSojLSGiNpVr_K0kU&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXvTcwSnXIY-FKmoUZG1mAykALEW0NyGjcjefS6YqPjYGBBbCTRdD7McsYWjIb8MXuFg&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSfp0x5yhgd764NyOeVYXUIN8h0U4eo4STWwUvO5UcN1h4qxpmm0kD0GCXYODdSKf6v08&usqp=CAU', '2021-12-25 08:59:00', '2021-12-30 03:30:29', 2, 2, 1),
-(39, 'Mũ cói vành hẹp thêu chữ M', 17, 'Mũ đi biển vừa thời trang, vừa giúp che chắn và bảo vệ da mặt, chất cói tự móc rất mềm đẹp. \r\nMũ có thể gấp gọn để vào vali mang đi tất cả nơi đâu. \r\nDễ dàng mix cùng với nhiều trang phục mà không sợ bị lỗi mốt', 149000, 119000, 8, 7, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU#https://bizweb.dktcdn.net/100/321/593/products/67108799-2116740528435347-746537750668247040-n.jpg?v=1565340541977#https://vn-test-11.slatic.net/p/232853c6f95f59b56407e0b7b2a6703a.jpg#https://winmart.onl/assets/media/images/009/M%C5%A9%20c%C3%B3i%20v%C3%A0nh%20h%E1%BA%B9p%20th%C3%AAu%20ch%E1%BB%AF%20M.jpg', '2021-12-26 14:51:47', '2021-12-30 03:30:29', 2, 2, 1),
-(40, 'Mũ Tai Bèo MG STUDIO Chất Nhung', 17, 'Mũ Tai Bèo MG STUDIO Chất Nhung trẻ trung, năng động', 99000, NULL, 30, 0, 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30', 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30#https://cf.shopee.vn/file/df5372db001a82c84f83d2ff9b196d54#https://bizweb.dktcdn.net/thumb/large/100/329/281/products/10354059929-1510934832-copy.jpg#https://storage.googleapis.com/cdn.nhanh.vn/store/7239/ps/20210407/159_800x800.jpg', '2022-01-01 09:09:27', '2022-01-01 09:09:27', 2, 2, 1),
-(41, 'Giày sneaker nữ trắng', 16, 'Giày sneaker nữ trắng phù hợp mọi lứa tuổi, trẻ trung năng động', 249000, 219000, 20, 0, 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg', 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Peen4W0D5fWpHfWjnu63Xr1J_0awno3AqQFVy_Yt7Y_pad_l0kXetTsVu6cH0BMWDCI&usqp=CAU#https://cf.shopee.vn/file/a34b6e6ef9163cd458999bea119e6d32#https://vn-test-11.slatic.net/p/6cb41ea252fb65e97470ef91e87e6317.jpg', '2022-01-01 09:31:45', '2022-01-01 09:31:45', 2, 2, 1),
-(42, 'Mắt kính Lục giác', 18, 'Kính gọng kim loại chân nhựa khoen lục giác, bền chất lượng', 199000, NULL, 8, 12, 'https://storage.googleapis.com/cdn.nhanh.vn/store/7534/psCT/20191227/18951207/Kinh_gong_kim_loai_chan_nhua_khoen_luc_giac_(19122475).jpg', 'https://storage.googleapis.com/cdn.nhanh.vn/store/7534/psCT/20200617/22683618/Kinh_gong_kim_loai_mat_tron_boc_nhua_cat_nhe_vien_(20062098).jpg#https://amansaigon.com/wp-content/uploads/2020/08/m%E1%BA%AFt-k%C3%ADnh-g%E1%BB%8Dng-tr%C3%B2n-xi-s%E1%BA%AFt-trong-m%C3%A0u-13.jpg#https://amansaigon.com/wp-content/uploads/2020/09/m%E1%BA%AFt-k%C3%ADnh-g%E1%BB%8Dng-tr%C3%B2n-gi%E1%BA%A3-c%E1%BA%ADn-s%E1%BA%AFt-mk69-5.jpg#https://storage.googleapis.com/cdn.nhanh.vn/store/7534/psCT/20191227/18951207/Kinh_gong_kim_loai_chan_nhua_khoen_luc_giac_(19122475).jpg', '2022-01-05 07:40:10', '2022-01-11 09:17:15', 2, 2, 1);
+INSERT INTO `products` (`id`, `name`, `category_id`, `content`, `price`, `price_sale`, `num`, `num_buy`, `image`, `array_image`, `size`, `color`, `created_at`, `updated_at`, `created_by`, `updated_by`, `active`) VALUES
+(17, 'Dép Balenciaga Pool Slide màu trắng', 16, '<p><b><font color=\"#ff0000\">Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.</font></b></p><p><span style=\"font-weight: bolder;\"><font color=\"#ff0000\">Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.</font></span></p><p><span style=\"font-weight: bolder;\"><font color=\"#ff0000\">Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.</font></span></p><p><span style=\"font-weight: bolder;\"><font color=\"#ff0000\">Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.</font></span></p><p><span style=\"font-weight: bolder;\"><font color=\"#ff0000\">Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.</font></span><span style=\"font-weight: bolder;\"><font color=\"#ff0000\"><br></font></span><span style=\"font-weight: bolder;\"><font color=\"#ff0000\"><br></font></span><span style=\"font-weight: bolder;\"><font color=\"#ff0000\"><br></font></span></p><hr><p><span style=\"font-weight: bolder;\"><font color=\"#ff0000\"><br></font></span><b><font color=\"#ff0000\"><br></font></b></p>', 195000, NULL, -12, 22, 'https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-trang.jpg', 'https://shopgiayreplica.com/wp-content/uploads/2020/06/Dep-Balenciaga-Pool-Slide-Blue-Replica6.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-xanh-la.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-piscine-slide-den.jpg', 'free size', 'Ngẫu nhiên', '2021-12-24 09:28:53', '2022-09-28 08:13:03', 2, 2, 1),
+(18, 'Mũ Lưỡi Trai LINJW', 17, 'Mũ Lưỡi Trai LINJW Vải Cotton Thêu Chữ Thời Trang Unisex Mùa Xuân 2021', 75000, 50000, 0, 15, 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140', 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl7_cUxUIre4_Q37ap0Q0nl76NZC79Wh3nfyasMBlRpBw7v74zxynSojLSGiNpVr_K0kU&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXvTcwSnXIY-FKmoUZG1mAykALEW0NyGjcjefS6YqPjYGBBbCTRdD7McsYWjIb8MXuFg&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSfp0x5yhgd764NyOeVYXUIN8h0U4eo4STWwUvO5UcN1h4qxpmm0kD0GCXYODdSKf6v08&usqp=CAU', 'free size', 'Ngẫu nhiên', '2021-12-25 08:59:00', '2022-01-13 07:34:06', 2, 2, 1),
+(19, 'Mũ cói vành hẹp thêu chữ M', 17, 'Mũ đi biển vừa thời trang, vừa giúp che chắn và bảo vệ da mặt, chất cói tự móc rất mềm đẹp. \r\nMũ có thể gấp gọn để vào vali mang đi tất cả nơi đâu. \r\nDễ dàng mix cùng với nhiều trang phục mà không sợ bị lỗi mốt', 149000, 119000, 1, 14, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU#https://bizweb.dktcdn.net/100/321/593/products/67108799-2116740528435347-746537750668247040-n.jpg?v=1565340541977#https://vn-test-11.slatic.net/p/232853c6f95f59b56407e0b7b2a6703a.jpg#https://winmart.onl/assets/media/images/009/M%C5%A9%20c%C3%B3i%20v%C3%A0nh%20h%E1%BA%B9p%20th%C3%AAu%20ch%E1%BB%AF%20M.jpg', 'free size', 'Ngẫu nhiên', '2021-12-26 14:51:47', '2022-03-24 01:49:49', 2, 2, 1),
+(20, 'Mũ Tai Bèo MG STUDIO Chất Nhung', 17, 'Mũ Tai Bèo MG STUDIO Chất Nhung trẻ trung, năng động', 99000, NULL, 29, 1, 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30', 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30#https://cf.shopee.vn/file/df5372db001a82c84f83d2ff9b196d54#https://bizweb.dktcdn.net/thumb/large/100/329/281/products/10354059929-1510934832-copy.jpg#https://storage.googleapis.com/cdn.nhanh.vn/store/7239/ps/20210407/159_800x800.jpg', 'free size', 'Ngẫu nhiên', '2022-01-01 09:09:27', '2022-01-11 05:53:29', 2, 2, 1),
+(21, 'Giày sneaker nữ trắng', 16, 'Giày sneaker nữ trắng phù hợp mọi lứa tuổi, trẻ trung năng động', 249000, 219000, 18, 2, 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg', 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Peen4W0D5fWpHfWjnu63Xr1J_0awno3AqQFVy_Yt7Y_pad_l0kXetTsVu6cH0BMWDCI&usqp=CAU#https://cf.shopee.vn/file/a34b6e6ef9163cd458999bea119e6d32#https://vn-test-11.slatic.net/p/6cb41ea252fb65e97470ef91e87e6317.jpg', 'free size', 'Ngẫu nhiên', '2022-01-01 09:31:45', '2022-01-11 09:17:15', 2, 2, 1),
+(22, 'Dép Balenciaga Pool Slide màu trắng', 16, 'Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.', 195000, NULL, 3, 7, 'https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-trang.jpg', 'https://shopgiayreplica.com/wp-content/uploads/2020/06/Dep-Balenciaga-Pool-Slide-Blue-Replica6.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-xanh-la.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-piscine-slide-den.jpg', 'free size', 'Ngẫu nhiên', '2021-12-24 09:28:53', '2022-01-11 02:56:36', 2, 2, 1),
+(23, 'Mũ Lưỡi Trai LINJW', 17, 'Mũ Lưỡi Trai LINJW Vải Cotton Thêu Chữ Thời Trang Unisex Mùa Xuân 2021', 75000, 50000, 6, 9, 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140', 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl7_cUxUIre4_Q37ap0Q0nl76NZC79Wh3nfyasMBlRpBw7v74zxynSojLSGiNpVr_K0kU&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXvTcwSnXIY-FKmoUZG1mAykALEW0NyGjcjefS6YqPjYGBBbCTRdD7McsYWjIb8MXuFg&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSfp0x5yhgd764NyOeVYXUIN8h0U4eo4STWwUvO5UcN1h4qxpmm0kD0GCXYODdSKf6v08&usqp=CAU', 'free size', 'Ngẫu nhiên', '2021-12-25 08:59:00', '2021-12-30 03:30:29', 2, 2, 1),
+(24, 'Mũ cói vành hẹp thêu chữ M', 17, 'Mũ đi biển vừa thời trang, vừa giúp che chắn và bảo vệ da mặt, chất cói tự móc rất mềm đẹp. \r\nMũ có thể gấp gọn để vào vali mang đi tất cả nơi đâu. \r\nDễ dàng mix cùng với nhiều trang phục mà không sợ bị lỗi mốt', 149000, 119000, 7, 8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU#https://bizweb.dktcdn.net/100/321/593/products/67108799-2116740528435347-746537750668247040-n.jpg?v=1565340541977#https://vn-test-11.slatic.net/p/232853c6f95f59b56407e0b7b2a6703a.jpg#https://winmart.onl/assets/media/images/009/M%C5%A9%20c%C3%B3i%20v%C3%A0nh%20h%E1%BA%B9p%20th%C3%AAu%20ch%E1%BB%AF%20M.jpg', 'free size', 'Ngẫu nhiên', '2021-12-26 14:51:47', '2022-01-05 04:42:44', 2, 2, 1),
+(25, 'Mũ Tai Bèo MG STUDIO Chất Nhung', 17, 'Mũ Tai Bèo MG STUDIO Chất Nhung trẻ trung, năng động', 99000, NULL, 30, 0, 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30', 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30#https://cf.shopee.vn/file/df5372db001a82c84f83d2ff9b196d54#https://bizweb.dktcdn.net/thumb/large/100/329/281/products/10354059929-1510934832-copy.jpg#https://storage.googleapis.com/cdn.nhanh.vn/store/7239/ps/20210407/159_800x800.jpg', 'free size', 'Ngẫu nhiên', '2022-01-01 09:09:27', '2022-01-01 09:09:27', 2, 2, 1),
+(26, 'Giày sneaker nữ trắng', 16, 'Giày sneaker nữ trắng phù hợp mọi lứa tuổi, trẻ trung năng động', 249000, 219000, 20, 0, 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg', 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Peen4W0D5fWpHfWjnu63Xr1J_0awno3AqQFVy_Yt7Y_pad_l0kXetTsVu6cH0BMWDCI&usqp=CAU#https://cf.shopee.vn/file/a34b6e6ef9163cd458999bea119e6d32#https://vn-test-11.slatic.net/p/6cb41ea252fb65e97470ef91e87e6317.jpg', 'free size', 'Ngẫu nhiên', '2022-01-01 09:31:45', '2022-01-01 09:31:45', 2, 2, 1),
+(27, 'Dép Balenciaga Pool Slide màu trắng', 16, 'Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.', 195000, NULL, 4, 6, 'https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-trang.jpg', 'https://shopgiayreplica.com/wp-content/uploads/2020/06/Dep-Balenciaga-Pool-Slide-Blue-Replica6.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-xanh-la.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-piscine-slide-den.jpg', 'free size', 'Ngẫu nhiên', '2021-12-24 09:28:53', '2022-03-24 02:12:50', 2, 2, 1),
+(28, 'Mũ Lưỡi Trai LINJW', 17, 'Mũ Lưỡi Trai LINJW Vải Cotton Thêu Chữ Thời Trang Unisex Mùa Xuân 2021', 75000, 50000, 0, 15, 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140', 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl7_cUxUIre4_Q37ap0Q0nl76NZC79Wh3nfyasMBlRpBw7v74zxynSojLSGiNpVr_K0kU&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXvTcwSnXIY-FKmoUZG1mAykALEW0NyGjcjefS6YqPjYGBBbCTRdD7McsYWjIb8MXuFg&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSfp0x5yhgd764NyOeVYXUIN8h0U4eo4STWwUvO5UcN1h4qxpmm0kD0GCXYODdSKf6v08&usqp=CAU', 'free size', 'Ngẫu nhiên', '2021-12-25 08:59:00', '2022-01-13 07:24:24', 2, 2, 1),
+(29, 'Mũ cói vành hẹp thêu chữ M', 17, 'Mũ đi biển vừa thời trang, vừa giúp che chắn và bảo vệ da mặt, chất cói tự móc rất mềm đẹp. \r\nMũ có thể gấp gọn để vào vali mang đi tất cả nơi đâu. \r\nDễ dàng mix cùng với nhiều trang phục mà không sợ bị lỗi mốt', 149000, 119000, 8, 7, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU#https://bizweb.dktcdn.net/100/321/593/products/67108799-2116740528435347-746537750668247040-n.jpg?v=1565340541977#https://vn-test-11.slatic.net/p/232853c6f95f59b56407e0b7b2a6703a.jpg#https://winmart.onl/assets/media/images/009/M%C5%A9%20c%C3%B3i%20v%C3%A0nh%20h%E1%BA%B9p%20th%C3%AAu%20ch%E1%BB%AF%20M.jpg', 'free size', 'Ngẫu nhiên', '2021-12-26 14:51:47', '2021-12-30 03:30:29', 2, 2, 1),
+(30, 'Mũ Tai Bèo MG STUDIO Chất Nhung', 17, 'Mũ Tai Bèo MG STUDIO Chất Nhung trẻ trung, năng động', 99000, NULL, 30, 0, 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30', 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30#https://cf.shopee.vn/file/df5372db001a82c84f83d2ff9b196d54#https://bizweb.dktcdn.net/thumb/large/100/329/281/products/10354059929-1510934832-copy.jpg#https://storage.googleapis.com/cdn.nhanh.vn/store/7239/ps/20210407/159_800x800.jpg', 'free size', 'Ngẫu nhiên', '2022-01-01 09:09:27', '2022-01-01 09:09:27', 2, 2, 1),
+(31, 'Giày sneaker nữ trắng', 16, 'Giày sneaker nữ trắng phù hợp mọi lứa tuổi, trẻ trung năng động', 249000, 219000, 20, 0, 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg', 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Peen4W0D5fWpHfWjnu63Xr1J_0awno3AqQFVy_Yt7Y_pad_l0kXetTsVu6cH0BMWDCI&usqp=CAU#https://cf.shopee.vn/file/a34b6e6ef9163cd458999bea119e6d32#https://vn-test-11.slatic.net/p/6cb41ea252fb65e97470ef91e87e6317.jpg', 'free size', 'Ngẫu nhiên', '2022-01-01 09:31:45', '2022-01-01 09:31:45', 2, 2, 1),
+(32, 'Dép Balenciaga Pool Slide màu trắng', 16, 'Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.', 195000, NULL, 5, 5, 'https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-trang.jpg', 'https://shopgiayreplica.com/wp-content/uploads/2020/06/Dep-Balenciaga-Pool-Slide-Blue-Replica6.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-xanh-la.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-piscine-slide-den.jpg', 'free size', 'Ngẫu nhiên', '2021-12-24 09:28:53', '2021-12-30 03:22:26', 2, 2, 1),
+(33, 'Mũ Lưỡi Trai LINJW', 17, 'Mũ Lưỡi Trai LINJW Vải Cotton Thêu Chữ Thời Trang Unisex Mùa Xuân 2021', 75000, 50000, 6, 9, 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140', 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl7_cUxUIre4_Q37ap0Q0nl76NZC79Wh3nfyasMBlRpBw7v74zxynSojLSGiNpVr_K0kU&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXvTcwSnXIY-FKmoUZG1mAykALEW0NyGjcjefS6YqPjYGBBbCTRdD7McsYWjIb8MXuFg&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSfp0x5yhgd764NyOeVYXUIN8h0U4eo4STWwUvO5UcN1h4qxpmm0kD0GCXYODdSKf6v08&usqp=CAU', 'free size', 'Ngẫu nhiên', '2021-12-25 08:59:00', '2021-12-30 03:30:29', 2, 2, 1),
+(34, 'Mũ cói vành hẹp thêu chữ M', 17, 'Mũ đi biển vừa thời trang, vừa giúp che chắn và bảo vệ da mặt, chất cói tự móc rất mềm đẹp. \r\nMũ có thể gấp gọn để vào vali mang đi tất cả nơi đâu. \r\nDễ dàng mix cùng với nhiều trang phục mà không sợ bị lỗi mốt', 149000, 119000, 7, 8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU#https://bizweb.dktcdn.net/100/321/593/products/67108799-2116740528435347-746537750668247040-n.jpg?v=1565340541977#https://vn-test-11.slatic.net/p/232853c6f95f59b56407e0b7b2a6703a.jpg#https://winmart.onl/assets/media/images/009/M%C5%A9%20c%C3%B3i%20v%C3%A0nh%20h%E1%BA%B9p%20th%C3%AAu%20ch%E1%BB%AF%20M.jpg', 'free size', 'Ngẫu nhiên', '2021-12-26 14:51:47', '2022-01-11 02:39:08', 2, 2, 1),
+(35, 'Mũ Tai Bèo MG STUDIO Chất Nhung', 17, 'Mũ Tai Bèo MG STUDIO Chất Nhung trẻ trung, năng động', 99000, NULL, 30, 0, 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30', 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30#https://cf.shopee.vn/file/df5372db001a82c84f83d2ff9b196d54#https://bizweb.dktcdn.net/thumb/large/100/329/281/products/10354059929-1510934832-copy.jpg#https://storage.googleapis.com/cdn.nhanh.vn/store/7239/ps/20210407/159_800x800.jpg', 'free size', 'Ngẫu nhiên', '2022-01-01 09:09:27', '2022-01-01 09:09:27', 2, 2, 1),
+(36, 'Giày sneaker nữ trắng', 16, 'Giày sneaker nữ trắng phù hợp mọi lứa tuổi, trẻ trung năng động', 249000, 219000, 20, 0, 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg', 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Peen4W0D5fWpHfWjnu63Xr1J_0awno3AqQFVy_Yt7Y_pad_l0kXetTsVu6cH0BMWDCI&usqp=CAU#https://cf.shopee.vn/file/a34b6e6ef9163cd458999bea119e6d32#https://vn-test-11.slatic.net/p/6cb41ea252fb65e97470ef91e87e6317.jpg', 'free size', 'Ngẫu nhiên', '2022-01-01 09:31:45', '2022-01-01 09:31:45', 2, 2, 1),
+(37, 'Dép Balenciaga Pool Slide màu trắng', 16, 'Dép Balenciaga Pool Slide màu trắng phù hợp với mọi lứa tuổi.', 195000, NULL, 5, 5, 'https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-trang.jpg', 'https://shopgiayreplica.com/wp-content/uploads/2020/06/Dep-Balenciaga-Pool-Slide-Blue-Replica6.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-pool-slide-xanh-la.jpg#https://giaytrecon.com/wp-content/uploads/2021/03/dep-balenciaga-piscine-slide-den.jpg', 'free size', 'Ngẫu nhiên', '2021-12-24 09:28:53', '2021-12-30 03:22:26', 2, 2, 1),
+(38, 'Mũ Lưỡi Trai LINJW', 17, 'Mũ Lưỡi Trai LINJW Vải Cotton Thêu Chữ Thời Trang Unisex Mùa Xuân 2021', 75000, 50000, 6, 9, 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140', 'https://cf.shopee.vn/file/bac8205acc789b80eaede00b8eb6e140#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl7_cUxUIre4_Q37ap0Q0nl76NZC79Wh3nfyasMBlRpBw7v74zxynSojLSGiNpVr_K0kU&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXvTcwSnXIY-FKmoUZG1mAykALEW0NyGjcjefS6YqPjYGBBbCTRdD7McsYWjIb8MXuFg&usqp=CAU#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSfp0x5yhgd764NyOeVYXUIN8h0U4eo4STWwUvO5UcN1h4qxpmm0kD0GCXYODdSKf6v08&usqp=CAU', 'free size', 'Ngẫu nhiên', '2021-12-25 08:59:00', '2021-12-30 03:30:29', 2, 2, 1),
+(39, 'Mũ cói vành hẹp thêu chữ M', 17, 'Mũ đi biển vừa thời trang, vừa giúp che chắn và bảo vệ da mặt, chất cói tự móc rất mềm đẹp. \r\nMũ có thể gấp gọn để vào vali mang đi tất cả nơi đâu. \r\nDễ dàng mix cùng với nhiều trang phục mà không sợ bị lỗi mốt', 149000, 119000, 8, 7, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOfspncVmM-FUHhIqEnJsOV0x5Lqk3u5i3a4zowqUmfy5auhfOvTQfU-ov71ueE9b9Qbg&usqp=CAU#https://bizweb.dktcdn.net/100/321/593/products/67108799-2116740528435347-746537750668247040-n.jpg?v=1565340541977#https://vn-test-11.slatic.net/p/232853c6f95f59b56407e0b7b2a6703a.jpg#https://winmart.onl/assets/media/images/009/M%C5%A9%20c%C3%B3i%20v%C3%A0nh%20h%E1%BA%B9p%20th%C3%AAu%20ch%E1%BB%AF%20M.jpg', 'free size', 'Ngẫu nhiên', '2021-12-26 14:51:47', '2021-12-30 03:30:29', 2, 2, 1),
+(40, 'Mũ Tai Bèo MG STUDIO Chất Nhung', 17, 'Mũ Tai Bèo MG STUDIO Chất Nhung trẻ trung, năng động', 99000, NULL, 30, 0, 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30', 'https://cf.shopee.vn/file/aa851a204b59c1d3572173708ed69b30#https://cf.shopee.vn/file/df5372db001a82c84f83d2ff9b196d54#https://bizweb.dktcdn.net/thumb/large/100/329/281/products/10354059929-1510934832-copy.jpg#https://storage.googleapis.com/cdn.nhanh.vn/store/7239/ps/20210407/159_800x800.jpg', 'free size', 'Ngẫu nhiên', '2022-01-01 09:09:27', '2022-01-01 09:09:27', 2, 2, 1),
+(41, 'Giày sneaker nữ trắng', 16, 'Giày sneaker nữ trắng phù hợp mọi lứa tuổi, trẻ trung năng động', 249000, 219000, 20, 0, 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg', 'https://salt.tikicdn.com/ts/product/d3/8e/38/af361a0de4eddf1253d4e6c87626c067.jpg#https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Peen4W0D5fWpHfWjnu63Xr1J_0awno3AqQFVy_Yt7Y_pad_l0kXetTsVu6cH0BMWDCI&usqp=CAU#https://cf.shopee.vn/file/a34b6e6ef9163cd458999bea119e6d32#https://vn-test-11.slatic.net/p/6cb41ea252fb65e97470ef91e87e6317.jpg', 'free size', 'Ngẫu nhiên', '2022-01-01 09:31:45', '2022-01-01 09:31:45', 2, 2, 1),
+(42, 'Mắt kính Lục giác', 18, 'Kính gọng kim loại chân nhựa khoen lục giác, bền chất lượng', 199000, NULL, 7, 13, 'https://storage.googleapis.com/cdn.nhanh.vn/store/7534/psCT/20191227/18951207/Kinh_gong_kim_loai_chan_nhua_khoen_luc_giac_(19122475).jpg', 'https://storage.googleapis.com/cdn.nhanh.vn/store/7534/psCT/20200617/22683618/Kinh_gong_kim_loai_mat_tron_boc_nhua_cat_nhe_vien_(20062098).jpg#https://amansaigon.com/wp-content/uploads/2020/08/m%E1%BA%AFt-k%C3%ADnh-g%E1%BB%8Dng-tr%C3%B2n-xi-s%E1%BA%AFt-trong-m%C3%A0u-13.jpg#https://amansaigon.com/wp-content/uploads/2020/09/m%E1%BA%AFt-k%C3%ADnh-g%E1%BB%8Dng-tr%C3%B2n-gi%E1%BA%A3-c%E1%BA%ADn-s%E1%BA%AFt-mk69-5.jpg#https://storage.googleapis.com/cdn.nhanh.vn/store/7534/psCT/20191227/18951207/Kinh_gong_kim_loai_chan_nhua_khoen_luc_giac_(19122475).jpg', 'free size', 'Ngẫu nhiên', '2022-01-05 07:40:10', '2022-03-24 02:07:32', 2, 2, 1),
+(43, 'Minh Ly', 15, '<p>xin chào ban nha hihi</p>', 30000, 6, 7, 0, 'https://dulichkhatvongviet.com/wp-content/uploads/2014/07/sapa.jpg', NULL, 'free size', 'Ngẫu nhiên', '2022-03-19 03:56:50', '2022-03-19 04:00:20', 2, 2, 1),
+(44, 'Minh Ly', 15, '<p>áo z đó nha xin chào nha</p>', 18000, NULL, 20, 0, 'https://tinbds.com/images/place/1/i52.jpg', NULL, 'free size', 'Ngẫu nhiên', '2022-03-19 03:57:50', '2022-03-19 03:57:50', 2, 2, 1),
+(45, 'Quang Linh', 15, '<p>xin chào nha hihihi nhhshs</p>', 18000, NULL, 45, 0, 'https://cf.shopee.vn/file/2de27d58b47ba77a9a5cb06fb8e904ea', 'https://cf.shopee.vn/file/2de27d58b47ba77a9a5cb06fb8e904ea#https://cf.shopee.vn/file/2de27d58b47ba77a9a5cb06fb8e904ea', 'size M#size L#size S', 'vàng#cam#đỏ', '2022-03-19 06:37:19', '2022-03-19 06:37:19', 2, 2, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `province`
+-- Cấu trúc bảng cho bảng `province`
 --
 
 CREATE TABLE `province` (
@@ -1112,7 +1135,7 @@ CREATE TABLE `province` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `province`
+-- Đang đổ dữ liệu cho bảng `province`
 --
 
 INSERT INTO `province` (`id`, `name`, `type`) VALUES
@@ -1183,7 +1206,7 @@ INSERT INTO `province` (`id`, `name`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slider`
+-- Cấu trúc bảng cho bảng `slider`
 --
 
 CREATE TABLE `slider` (
@@ -1198,7 +1221,7 @@ CREATE TABLE `slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `slider`
+-- Đang đổ dữ liệu cho bảng `slider`
 --
 
 INSERT INTO `slider` (`id`, `name`, `url`, `image`, `content`, `active`, `created_at`, `updated_at`) VALUES
@@ -1209,13 +1232,16 @@ INSERT INTO `slider` (`id`, `name`, `url`, `image`, `content`, `active`, `create
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `avatar` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'https://anhdephd.vn/wp-content/uploads/2022/04/avatar-trang-1.jpg',
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `type_id` bigint(20) UNSIGNED DEFAULT 2,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -1229,18 +1255,18 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `type_id`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `created_by`, `updated_by`, `google_id`, `fb_id`) VALUES
-(2, 'Nguyễn Như Phượng', 'nguyenthinhuphuong242@gmail.com', 1, NULL, '$2y$10$42lF2wp805JJ3T.0ZDl8fOQQE5OJM3luIg5kKR5BfIc44e2mp4Gwm', 'zcBJ3nYDZZT6B31eEVoSaSALwxAgk8SAsa1oFJZ1scLNHTKF5AHRIaAgzvWE', '2021-12-23 10:23:08', '2022-01-05 07:26:09', NULL, NULL, NULL, NULL),
-(18, 'web Happy', 'webhappyday@gmail.com', 2, NULL, '$2y$10$gCukBt3Hd2/kQrTYXvxB1en72w6KlkNUH/Ewk48BOqnBcntTYJnoO', NULL, '2022-01-13 00:22:09', '2022-01-13 00:22:09', NULL, NULL, '115327070269828401650', NULL),
-(19, 'Quang Linh', 'quanglinh@gmail.com', 2, NULL, '$2y$10$/BNax/fMwT1oKz1WVpCM5O01WxU8tf30xpy1Afbyw49PmK9Rz7PwS', NULL, '2022-03-07 00:08:22', '2022-03-07 00:08:22', NULL, NULL, NULL, NULL);
+INSERT INTO `users` (`id`, `avatar`, `name`, `email`, `phone`, `address`, `type_id`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `created_by`, `updated_by`, `google_id`, `fb_id`) VALUES
+(2, 'https://anhdephd.vn/wp-content/uploads/2022/04/avatar-trang-1.jpg', 'Nguyễn Như Phượng', 'nguyenthinhuphuong242@gmail.com', NULL, NULL, 1, NULL, '$2y$10$42lF2wp805JJ3T.0ZDl8fOQQE5OJM3luIg5kKR5BfIc44e2mp4Gwm', 'J3H07ElfHSESo9Fv3meuRqV3Djy10Muj9HeoAK5v4jn8sBv3XVju2Einsr4Y', '2021-12-23 10:23:08', '2022-01-05 07:26:09', NULL, NULL, NULL, NULL),
+(18, 'https://anhdephd.vn/wp-content/uploads/2022/04/avatar-trang-1.jpg', 'web Happy', 'webhappyday@gmail.com', NULL, NULL, 2, NULL, '$2y$10$gCukBt3Hd2/kQrTYXvxB1en72w6KlkNUH/Ewk48BOqnBcntTYJnoO', NULL, '2022-01-13 00:22:09', '2022-01-13 00:22:09', NULL, NULL, '115327070269828401650', NULL),
+(19, 'https://anhdephd.vn/wp-content/uploads/2022/04/avatar-trang-1.jpg', 'Quang Linh', 'quanglinh@gmail.com', NULL, NULL, 2, NULL, '$2y$10$/BNax/fMwT1oKz1WVpCM5O01WxU8tf30xpy1Afbyw49PmK9Rz7PwS', NULL, '2022-03-07 00:08:22', '2022-03-07 00:08:22', NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_type`
+-- Cấu trúc bảng cho bảng `user_type`
 --
 
 CREATE TABLE `user_type` (
@@ -1251,7 +1277,7 @@ CREATE TABLE `user_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user_type`
+-- Đang đổ dữ liệu cho bảng `user_type`
 --
 
 INSERT INTO `user_type` (`id`, `name`, `created_at`, `update_at`) VALUES
@@ -1261,7 +1287,7 @@ INSERT INTO `user_type` (`id`, `name`, `created_at`, `update_at`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ward`
+-- Cấu trúc bảng cho bảng `ward`
 --
 
 CREATE TABLE `ward` (
@@ -1272,7 +1298,7 @@ CREATE TABLE `ward` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `ward`
+-- Đang đổ dữ liệu cho bảng `ward`
 --
 
 INSERT INTO `ward` (`id`, `name`, `type`, `district_id`) VALUES
@@ -11884,11 +11910,11 @@ INSERT INTO `ward` (`id`, `name`, `type`, `district_id`) VALUES
 (32248, 'Xã Đất Mũi', 'Xã', 973);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `categories`
+-- Chỉ mục cho bảng `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`),
@@ -11897,7 +11923,7 @@ ALTER TABLE `categories`
   ADD KEY `categories_updated_by_foreign` (`updated_by`);
 
 --
--- Indexes for table `discount`
+-- Chỉ mục cho bảng `discount`
 --
 ALTER TABLE `discount`
   ADD PRIMARY KEY (`code`),
@@ -11905,34 +11931,34 @@ ALTER TABLE `discount`
   ADD KEY `discount_updated_by_foreign` (`updated_by`);
 
 --
--- Indexes for table `district`
+-- Chỉ mục cho bảng `district`
 --
 ALTER TABLE `district`
   ADD PRIMARY KEY (`id`),
   ADD KEY `province_id` (`province_id`);
 
 --
--- Indexes for table `failed_jobs`
+-- Chỉ mục cho bảng `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Indexes for table `feedback`
+-- Chỉ mục cho bảng `feedback`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`),
   ADD KEY `feedback_user_id_foreign` (`user_id`);
 
 --
--- Indexes for table `migrations`
+-- Chỉ mục cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `order`
+-- Chỉ mục cho bảng `order`
 --
 ALTER TABLE `order`
   ADD PRIMARY KEY (`id`),
@@ -11946,7 +11972,7 @@ ALTER TABLE `order`
   ADD KEY `order_pay_id_foreign` (`pay_id`);
 
 --
--- Indexes for table `orderdetail`
+-- Chỉ mục cho bảng `orderdetail`
 --
 ALTER TABLE `orderdetail`
   ADD PRIMARY KEY (`id`),
@@ -11954,25 +11980,25 @@ ALTER TABLE `orderdetail`
   ADD KEY `orderdetail_product_id_foreign` (`product_id`);
 
 --
--- Indexes for table `orderstatus`
+-- Chỉ mục cho bảng `orderstatus`
 --
 ALTER TABLE `orderstatus`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `password_resets`
+-- Chỉ mục cho bảng `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Indexes for table `pay`
+-- Chỉ mục cho bảng `pay`
 --
 ALTER TABLE `pay`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `personal_access_tokens`
+-- Chỉ mục cho bảng `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -11980,7 +12006,7 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Indexes for table `products`
+-- Chỉ mục cho bảng `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`),
@@ -11989,19 +12015,19 @@ ALTER TABLE `products`
   ADD KEY `products_updated_by_foreign` (`updated_by`);
 
 --
--- Indexes for table `province`
+-- Chỉ mục cho bảng `province`
 --
 ALTER TABLE `province`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `slider`
+-- Chỉ mục cho bảng `slider`
 --
 ALTER TABLE `slider`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -12011,133 +12037,133 @@ ALTER TABLE `users`
   ADD KEY `updated_by` (`updated_by`);
 
 --
--- Indexes for table `user_type`
+-- Chỉ mục cho bảng `user_type`
 --
 ALTER TABLE `user_type`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Indexes for table `ward`
+-- Chỉ mục cho bảng `ward`
 --
 ALTER TABLE `ward`
   ADD PRIMARY KEY (`id`),
   ADD KEY `province_id` (`district_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `failed_jobs`
+-- AUTO_INCREMENT cho bảng `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `feedback`
+-- AUTO_INCREMENT cho bảng `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT cho bảng `order`
 --
 ALTER TABLE `order`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
--- AUTO_INCREMENT for table `orderdetail`
+-- AUTO_INCREMENT cho bảng `orderdetail`
 --
 ALTER TABLE `orderdetail`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT for table `orderstatus`
+-- AUTO_INCREMENT cho bảng `orderstatus`
 --
 ALTER TABLE `orderstatus`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `pay`
+-- AUTO_INCREMENT cho bảng `pay`
 --
 ALTER TABLE `pay`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `personal_access_tokens`
+-- AUTO_INCREMENT cho bảng `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
--- AUTO_INCREMENT for table `slider`
+-- AUTO_INCREMENT cho bảng `slider`
 --
 ALTER TABLE `slider`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT for table `user_type`
+-- AUTO_INCREMENT cho bảng `user_type`
 --
 ALTER TABLE `user_type`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `categories`
+-- Các ràng buộc cho bảng `categories`
 --
 ALTER TABLE `categories`
   ADD CONSTRAINT `categories_created_by_foreign` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `categories_updated_by_foreign` FOREIGN KEY (`updated_by`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `discount`
+-- Các ràng buộc cho bảng `discount`
 --
 ALTER TABLE `discount`
   ADD CONSTRAINT `discount_created_by_foreign` FOREIGN KEY (`created_by`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `discount_updated_by_foreign` FOREIGN KEY (`updated_by`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `district`
+-- Các ràng buộc cho bảng `district`
 --
 ALTER TABLE `district`
   ADD CONSTRAINT `district_ibfk_1` FOREIGN KEY (`province_id`) REFERENCES `province` (`id`);
 
 --
--- Constraints for table `feedback`
+-- Các ràng buộc cho bảng `feedback`
 --
 ALTER TABLE `feedback`
   ADD CONSTRAINT `feedback_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `order`
+-- Các ràng buộc cho bảng `order`
 --
 ALTER TABLE `order`
   ADD CONSTRAINT `order_ibfk_1` FOREIGN KEY (`province_id`) REFERENCES `province` (`id`),
@@ -12147,14 +12173,14 @@ ALTER TABLE `order`
   ADD CONSTRAINT `order_pay_id_foreign` FOREIGN KEY (`pay_id`) REFERENCES `pay` (`id`);
 
 --
--- Constraints for table `orderdetail`
+-- Các ràng buộc cho bảng `orderdetail`
 --
 ALTER TABLE `orderdetail`
   ADD CONSTRAINT `orderdetail_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`),
   ADD CONSTRAINT `orderdetail_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`);
 
 --
--- Constraints for table `products`
+-- Các ràng buộc cho bảng `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `products_category_id_foreign` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`),
@@ -12163,7 +12189,7 @@ ALTER TABLE `products`
   ADD CONSTRAINT `products_updated_by_foreign` FOREIGN KEY (`updated_by`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `users`
+-- Các ràng buộc cho bảng `users`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`type_id`) REFERENCES `user_type` (`id`),
@@ -12171,7 +12197,7 @@ ALTER TABLE `users`
   ADD CONSTRAINT `users_ibfk_3` FOREIGN KEY (`updated_by`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `ward`
+-- Các ràng buộc cho bảng `ward`
 --
 ALTER TABLE `ward`
   ADD CONSTRAINT `ward_ibfk_1` FOREIGN KEY (`district_id`) REFERENCES `district` (`id`);

@@ -45,7 +45,7 @@
                                 </td>
                                 <td class="column-2">
                                     <div class="row">
-                                        <a href="http://localhost:8080/ShopNNP/public/product/{{$product->getProduct($id)->id}}">{{$product->getProduct($id)->name}}</a>
+                                        <a href="http://localhost:8080/ShopNNP/public/product/productdetail/{{$product->getProduct($id)->id}}">{{$product->getProduct($id)->name}}</a>
                                     </div>
                                     <div class="row">
                                         <div class="badge badge-danger pointer" onclick="deletecart('{{$id}}') ">

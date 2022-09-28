@@ -50,7 +50,7 @@
 
                             <div class="form-group col-sm-12">
                                 <label for="content">Nội dung</label>
-                                <textarea name="content" class="form-control" id="content"  placeholder="Nhập nội dung" cols="30" rows="10">{{$product->content}}</textarea>
+                                <textarea name="content" class="form-control" id="content"  placeholder="Nhập nội dung" cols="30" rows="10" value={{$product->content}} >{{$product->content}}</textarea>
                             </div>
                             <div class="form-group col-sm-12">
                                 <label for="image">Hình ảnh</label>

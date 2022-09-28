@@ -5,7 +5,7 @@
 <div class="row personal_row">
     <div class="canhan_thanhchon">
         <div class="thanhchon_head row">
-            <img id="user_thanhchon" src="https://png.pngtree.com/png-clipart/20200225/original/pngtree-beautiful-admin-roles-glyph-vector-icon-png-image_5267597.jpg" alt="avatar">
+            <img id="user_thanhchon" src="{{$user->avatar}}"  onError="this.src='https://anhdephd.vn/wp-content/uploads/2022/04/avatar-trang-1.jpg'" alt="avatar">
             <div class="info_thanhchon">
                 <p style="font-weight: bold;">{{$user->name}}</p>
                 <p>{{$user->email}}</p>

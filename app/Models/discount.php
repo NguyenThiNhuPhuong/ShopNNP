@@ -34,8 +34,8 @@ class Discount extends Model
     }
     function updateNumUsed($code,$num_used){
         Discount::where('code',$code)
-        ->update([
-            'num_used'=>$num_used
-        ]);
+            ->update([
+                'num_used'=>$num_used
+            ]);
     }
 }

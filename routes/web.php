@@ -33,7 +33,8 @@ Route::post('/facebook/register/store', [FacebookController::class, 'facebookReg
 Route::get('Admin/user/register', [UserController::class, 'register'])->name('register');
 Route::post('Admin/user/register/store/add', [UserController::class, 'add']);
 Route::get('Admin/user/login', [UserController::class, 'login'])->name('login');
-Route::post('Admin/user/login/store', [UserController::class, 'store']);
+//Route::post('Admin/user/login/store', [UserController::class, 'store']);
+Route::post('Admin/user/login', [UserController::class, 'store'])->name("logincart");
 Route::get('Admin/user/logout', [UserController::class, 'logout'])->name('logout');
 
 //Customer
@@ -42,6 +43,7 @@ Route::get('/product', [ShopController::class, 'shop'])->name('product');
 Route::get('/product/category/{name}/{id}', [ShopController::class, 'shopCategory']);
 Route::any('/product/productdetail/{id}', [ShopController::class, 'product_detail']);
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact');
+
 
 Route::middleware(['auth'])->group(function () {
     //Admin
@@ -103,6 +105,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/personal/order', [PersonalController::class, 'order'])->name('orderUser');
     Route::get('/personal/order/{id}', [PersonalController::class, 'orderDetail'])->name('orderDetailUser');
     Route::get('/personal', [PersonalController::class, 'personal'])->name('personal');
-    
+
 
 });
